@@ -2,47 +2,76 @@
 <html>
 <head>
   <title>Is Houdini Ready Yet?</title>
+  <style>
+    td {
+      text-align: center;
+    }
+    thead td {
+      vertical-align: top;
+    }
+    thead .status__browser img {
+      display: block;
+      height: 50px;
+      margin: 0 auto;
+    }
+
+  </style>
 </head>
 <body>
   <table>
     <thead>
       <tr>
         <td class="empty"></td>
-          <td class="status__browser--chrome">Google Chrome</td>
-          <td class="status__browser--firefox">Mozilla Firefox</td>
-          <td class="status__browser--opera">Opera</td>
-          <td class="status__browser--edge">Microsoft Edge</td>
-          <td class="status__browser--safari">Apple Safari</td>
+          <td class="status__browser status__browser--chrome">
+            <img src="/logos/chrome.svg">
+            Google Chrome
+          </td>
+          <td class="status__browser status__browser--firefox">
+            <img src="/logos/firefox.svg">
+            Mozilla Firefox
+          </td>
+          <td class="status__browser status__browser--opera">
+            <img src="/logos/opera.svg">
+            Opera
+          </td>
+          <td class="status__browser status__browser--edge">
+            <img src="/logos/edge.svg">
+            Microsoft Edge
+          </td>
+          <td class="status__browser status__browser--safari">
+            <img src="/logos/safari.svg">
+            Apple Safari
+          </td>
       </tr>
     </thead>
     <tbody>
-      <tr class="status__api--layout">
+      <tr class="status__api status__api--layout">
         <th>
           <p class="status__api__name">CSS Layout API</p>
           (<a href="https://drafts.css-houdini.org/css-layout-api/">spec</a>)
         </th>
-          <td class="status__browser--chrome status__completeness--none">
+          <td class="status__browser--chrome status__completeness status__completeness--none">
             none
           </td>
-          <td class="status__browser--firefox status__completeness--none">
+          <td class="status__browser--firefox status__completeness status__completeness--none">
             none
           </td>
-          <td class="status__browser--opera status__completeness--none">
+          <td class="status__browser--opera status__completeness status__completeness--none">
             none
           </td>
-          <td class="status__browser--edge status__completeness--none">
+          <td class="status__browser--edge status__completeness status__completeness--none">
             none
           </td>
-          <td class="status__browser--safari status__completeness--none">
+          <td class="status__browser--safari status__completeness status__completeness--none">
             none
           </td>
       </tr>
-      <tr class="status__api--painting">
+      <tr class="status__api status__api--painting">
         <th>
           <p class="status__api__name">CSS Painting API</p>
           (<a href="https://drafts.css-houdini.org/css-paint-api/">spec</a>)
         </th>
-          <td class="status__browser--chrome status__completeness--partial">
+          <td class="status__browser--chrome status__completeness status__completeness--partial">
             partial
               (Canary)
               <details>
@@ -52,88 +81,88 @@
                 </div>
               </details>
           </td>
-          <td class="status__browser--firefox status__completeness--none">
+          <td class="status__browser--firefox status__completeness status__completeness--none">
             none
           </td>
-          <td class="status__browser--opera status__completeness--none">
+          <td class="status__browser--opera status__completeness status__completeness--none">
             none
           </td>
-          <td class="status__browser--edge status__completeness--none">
+          <td class="status__browser--edge status__completeness status__completeness--none">
             none
           </td>
-          <td class="status__browser--safari status__completeness--none">
+          <td class="status__browser--safari status__completeness status__completeness--none">
             none
           </td>
       </tr>
-      <tr class="status__api--parser">
+      <tr class="status__api status__api--parser">
         <th>
           <p class="status__api__name">CSS Parser API</p>
           (<a href="https://drafts.css-houdini.org/css-parser-api/">spec</a>)
         </th>
-          <td class="status__browser--chrome status__completeness--none">
+          <td class="status__browser--chrome status__completeness status__completeness--none">
             none
           </td>
-          <td class="status__browser--firefox status__completeness--none">
+          <td class="status__browser--firefox status__completeness status__completeness--none">
             none
           </td>
-          <td class="status__browser--opera status__completeness--none">
+          <td class="status__browser--opera status__completeness status__completeness--none">
             none
           </td>
-          <td class="status__browser--edge status__completeness--none">
+          <td class="status__browser--edge status__completeness status__completeness--none">
             none
           </td>
-          <td class="status__browser--safari status__completeness--none">
+          <td class="status__browser--safari status__completeness status__completeness--none">
             none
           </td>
       </tr>
-      <tr class="status__api--propertiesandvalues">
+      <tr class="status__api status__api--propertiesandvalues">
         <th>
           <p class="status__api__name">CSS Properties &amp; Values API</p>
           (<a href="https://drafts.css-houdini.org/css-properties-values-api/">spec</a>)
         </th>
-          <td class="status__browser--chrome status__completeness--none">
+          <td class="status__browser--chrome status__completeness status__completeness--none">
             none
           </td>
-          <td class="status__browser--firefox status__completeness--none">
+          <td class="status__browser--firefox status__completeness status__completeness--none">
             none
           </td>
-          <td class="status__browser--opera status__completeness--none">
+          <td class="status__browser--opera status__completeness status__completeness--none">
             none
           </td>
-          <td class="status__browser--edge status__completeness--none">
+          <td class="status__browser--edge status__completeness status__completeness--none">
             none
           </td>
-          <td class="status__browser--safari status__completeness--none">
+          <td class="status__browser--safari status__completeness status__completeness--none">
             none
           </td>
       </tr>
-      <tr class="status__api--typedom">
+      <tr class="status__api status__api--typedom">
         <th>
           <p class="status__api__name">CSS Typed OM</p>
           (<a href="https://drafts.css-houdini.org/css-typed-om/">spec</a>)
         </th>
-          <td class="status__browser--chrome status__completeness--none">
+          <td class="status__browser--chrome status__completeness status__completeness--none">
             none
           </td>
-          <td class="status__browser--firefox status__completeness--none">
+          <td class="status__browser--firefox status__completeness status__completeness--none">
             none
           </td>
-          <td class="status__browser--opera status__completeness--none">
+          <td class="status__browser--opera status__completeness status__completeness--none">
             none
           </td>
-          <td class="status__browser--edge status__completeness--none">
+          <td class="status__browser--edge status__completeness status__completeness--none">
             none
           </td>
-          <td class="status__browser--safari status__completeness--none">
+          <td class="status__browser--safari status__completeness status__completeness--none">
             none
           </td>
       </tr>
-      <tr class="status__api--fontmetrics">
+      <tr class="status__api status__api--fontmetrics">
         <th>
           <p class="status__api__name">Font Metrics API</p>
           (<a href="https://drafts.css-houdini.org/font-metrics-api/">spec</a>)
         </th>
-          <td class="status__browser--chrome status__completeness--partial">
+          <td class="status__browser--chrome status__completeness status__completeness--partial">
             partial
               (Canary)
               <details>
@@ -143,16 +172,16 @@
                 </div>
               </details>
           </td>
-          <td class="status__browser--firefox status__completeness--none">
+          <td class="status__browser--firefox status__completeness status__completeness--none">
             none
           </td>
-          <td class="status__browser--opera status__completeness--none">
+          <td class="status__browser--opera status__completeness status__completeness--none">
             none
           </td>
-          <td class="status__browser--edge status__completeness--none">
+          <td class="status__browser--edge status__completeness status__completeness--none">
             none
           </td>
-          <td class="status__browser--safari status__completeness--none">
+          <td class="status__browser--safari status__completeness status__completeness--none">
             none
           </td>
       </tr>
