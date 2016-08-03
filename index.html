@@ -2,16 +2,36 @@
 <html>
 <head>
   <title>Is Houdini Ready Yet?</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
+    }
+    html, body {
+      width: 100vw;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Roboto Condensed', sans-serif;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .title {
+      text-align: center;
+      font-size: 3em;
+      margin: 2em 0;
+    }
+    table {
+      width: 100%;
     }
     td {
       text-align: center;
       padding: 5px;
       vertical-align: center;
     }
-    /*Rounded corners for status table*/
+    /* Rounded corners for status table */
     tbody tr:first-of-type > td:first-of-type {
       border-top-left-radius: 3px;
     }
@@ -24,14 +44,13 @@
     tbody tr:last-of-type > td:last-of-type {
       border-bottom-right-radius: 3px;
     }
-
     thead td {
       vertical-align: top;
     }
     thead .status__browser img {
       display: block;
       height: 50px;
-      margin: 0 auto;
+      margin: 10px auto;
     }
     .status__completeness button {
       display: block;
@@ -40,7 +59,8 @@
       background-color: rgb(255, 255, 255);
       opacity: 0.4;
       transition: opacity 0.3s ease-in-out;
-      width: 100%;
+      /*width: 100%;*/
+      margin: 10px;
     }
     .status__completeness button:hover {
       opacity: 0.8;
@@ -60,6 +80,7 @@
   </style>
 </head>
 <body>
+  <h1 class="title">Is Houdini ready yet‽</h1>
   <table>
     <thead>
       <tr>
