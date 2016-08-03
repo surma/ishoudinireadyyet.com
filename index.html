@@ -3,9 +3,28 @@
 <head>
   <title>Is Houdini Ready Yet?</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
     td {
       text-align: center;
+      padding: 5px;
+      vertical-align: center;
     }
+    /*Rounded corners for status table*/
+    tbody tr:first-of-type > td:first-of-type {
+      border-top-left-radius: 3px;
+    }
+    tbody tr:first-of-type > td:last-of-type {
+      border-top-right-radius: 3px;
+    }
+    tbody tr:last-of-type > td:first-of-type {
+      border-bottom-left-radius: 3px;
+    }
+    tbody tr:last-of-type > td:last-of-type {
+      border-bottom-right-radius: 3px;
+    }
+
     thead td {
       vertical-align: top;
     }
@@ -14,7 +33,30 @@
       height: 50px;
       margin: 0 auto;
     }
-
+    .status__completeness button {
+      display: block;
+      border: 0;
+      border-radius: 3px;
+      background-color: rgb(255, 255, 255);
+      opacity: 0.4;
+      transition: opacity 0.3s ease-in-out;
+      width: 100%;
+    }
+    .status__completeness button:hover {
+      opacity: 0.8;
+    }
+    .status__completeness details {
+      display: none;
+    }
+    .status__completeness--none {
+      background-color: hsl(0, 50%, 65%);
+    }
+    .status__completeness--partial {
+      background-color: hsl(50, 70%, 60%);
+    }
+    .status__completeness--full {
+      background-color: hsl(75, 70%, 60%);
+    }
   </style>
 </head>
 <body>
@@ -45,146 +87,249 @@
       </tr>
     </thead>
     <tbody>
-      <tr class="status__api status__api--layout">
-        <th>
-          <p class="status__api__name">CSS Layout API</p>
-          (<a href="https://drafts.css-houdini.org/css-layout-api/">spec</a>)
-        </th>
-          <td class="status__browser--chrome status__completeness status__completeness--none">
-            none
-          </td>
-          <td class="status__browser--firefox status__completeness status__completeness--none">
-            none
-          </td>
-          <td class="status__browser--opera status__completeness status__completeness--none">
-            none
-          </td>
-          <td class="status__browser--edge status__completeness status__completeness--none">
-            none
-          </td>
-          <td class="status__browser--safari status__completeness status__completeness--none">
-            none
-          </td>
-      </tr>
-      <tr class="status__api status__api--painting">
-        <th>
-          <p class="status__api__name">CSS Painting API</p>
-          (<a href="https://drafts.css-houdini.org/css-paint-api/">spec</a>)
-        </th>
-          <td class="status__browser--chrome status__completeness status__completeness--partial">
-            partial
-              (Canary)
-              <details>
-                <summary>Flags & Details</summary>
-                <div>
-                  Behind the “Experimental Web Platform features” flag
-                </div>
-              </details>
-          </td>
-          <td class="status__browser--firefox status__completeness status__completeness--none">
-            none
-          </td>
-          <td class="status__browser--opera status__completeness status__completeness--none">
-            none
-          </td>
-          <td class="status__browser--edge status__completeness status__completeness--none">
-            none
-          </td>
-          <td class="status__browser--safari status__completeness status__completeness--none">
-            none
-          </td>
-      </tr>
-      <tr class="status__api status__api--parser">
-        <th>
-          <p class="status__api__name">CSS Parser API</p>
-          (<a href="https://drafts.css-houdini.org/css-parser-api/">spec</a>)
-        </th>
-          <td class="status__browser--chrome status__completeness status__completeness--none">
-            none
-          </td>
-          <td class="status__browser--firefox status__completeness status__completeness--none">
-            none
-          </td>
-          <td class="status__browser--opera status__completeness status__completeness--none">
-            none
-          </td>
-          <td class="status__browser--edge status__completeness status__completeness--none">
-            none
-          </td>
-          <td class="status__browser--safari status__completeness status__completeness--none">
-            none
-          </td>
-      </tr>
-      <tr class="status__api status__api--propertiesandvalues">
-        <th>
-          <p class="status__api__name">CSS Properties &amp; Values API</p>
-          (<a href="https://drafts.css-houdini.org/css-properties-values-api/">spec</a>)
-        </th>
-          <td class="status__browser--chrome status__completeness status__completeness--none">
-            none
-          </td>
-          <td class="status__browser--firefox status__completeness status__completeness--none">
-            none
-          </td>
-          <td class="status__browser--opera status__completeness status__completeness--none">
-            none
-          </td>
-          <td class="status__browser--edge status__completeness status__completeness--none">
-            none
-          </td>
-          <td class="status__browser--safari status__completeness status__completeness--none">
-            none
-          </td>
-      </tr>
-      <tr class="status__api status__api--typedom">
-        <th>
-          <p class="status__api__name">CSS Typed OM</p>
-          (<a href="https://drafts.css-houdini.org/css-typed-om/">spec</a>)
-        </th>
-          <td class="status__browser--chrome status__completeness status__completeness--none">
-            none
-          </td>
-          <td class="status__browser--firefox status__completeness status__completeness--none">
-            none
-          </td>
-          <td class="status__browser--opera status__completeness status__completeness--none">
-            none
-          </td>
-          <td class="status__browser--edge status__completeness status__completeness--none">
-            none
-          </td>
-          <td class="status__browser--safari status__completeness status__completeness--none">
-            none
-          </td>
-      </tr>
-      <tr class="status__api status__api--fontmetrics">
-        <th>
-          <p class="status__api__name">Font Metrics API</p>
-          (<a href="https://drafts.css-houdini.org/font-metrics-api/">spec</a>)
-        </th>
-          <td class="status__browser--chrome status__completeness status__completeness--partial">
-            partial
-              (Canary)
-              <details>
-                <summary>Flags & Details</summary>
-                <div>
-                  Behind the “Experimental Web Platform features” flag
-                </div>
-              </details>
-          </td>
-          <td class="status__browser--firefox status__completeness status__completeness--none">
-            none
-          </td>
-          <td class="status__browser--opera status__completeness status__completeness--none">
-            none
-          </td>
-          <td class="status__browser--edge status__completeness status__completeness--none">
-            none
-          </td>
-          <td class="status__browser--safari status__completeness status__completeness--none">
-            none
-          </td>
-      </tr>
+        <tr class="status__api status__api--layout">
+          <th>
+            <a href="https://drafts.css-houdini.org/css-layout-api/" class="status__api__name">CSS Layout API</a>
+          </th>
+              <td class="status__browser--chrome status__completeness status__completeness--none">
+                none
+                  <button>Flags & Details</button>
+                  <details>
+                    
+                  </details>
+              </td>
+              <td class="status__browser--firefox status__completeness status__completeness--none">
+                none
+                  <button>Flags & Details</button>
+                  <details>
+                    
+                  </details>
+              </td>
+              <td class="status__browser--opera status__completeness status__completeness--none">
+                none
+                  <button>Flags & Details</button>
+                  <details>
+                    
+                  </details>
+              </td>
+              <td class="status__browser--edge status__completeness status__completeness--none">
+                none
+                  <button>Flags & Details</button>
+                  <details>
+                    
+                  </details>
+              </td>
+              <td class="status__browser--safari status__completeness status__completeness--none">
+                none
+                  <button>Flags & Details</button>
+                  <details>
+                    
+                  </details>
+              </td>
+        </tr>
+        <tr class="status__api status__api--painting">
+          <th>
+            <a href="https://drafts.css-houdini.org/css-paint-api/" class="status__api__name">CSS Painting API</a>
+          </th>
+              <td class="status__browser--chrome status__completeness status__completeness--partial">
+                partial
+                  (Canary)
+                  <button>Flags & Details</button>
+                  <details>
+                    Behind the “Experimental Web Platform features” flag.
+
+                  </details>
+              </td>
+              <td class="status__browser--firefox status__completeness status__completeness--none">
+                none
+                  <button>Flags & Details</button>
+                  <details>
+                    
+                  </details>
+              </td>
+              <td class="status__browser--opera status__completeness status__completeness--none">
+                none
+                  <button>Flags & Details</button>
+                  <details>
+                    
+                  </details>
+              </td>
+              <td class="status__browser--edge status__completeness status__completeness--none">
+                none
+                  <button>Flags & Details</button>
+                  <details>
+                    
+                  </details>
+              </td>
+              <td class="status__browser--safari status__completeness status__completeness--none">
+                none
+                  <button>Flags & Details</button>
+                  <details>
+                    
+                  </details>
+              </td>
+        </tr>
+        <tr class="status__api status__api--parser">
+          <th>
+            <a href="https://drafts.css-houdini.org/css-parser-api/" class="status__api__name">CSS Parser API</a>
+          </th>
+              <td class="status__browser--chrome status__completeness status__completeness--none">
+                none
+                  <button>Flags & Details</button>
+                  <details>
+                    
+                  </details>
+              </td>
+              <td class="status__browser--firefox status__completeness status__completeness--none">
+                none
+                  <button>Flags & Details</button>
+                  <details>
+                    
+                  </details>
+              </td>
+              <td class="status__browser--opera status__completeness status__completeness--none">
+                none
+                  <button>Flags & Details</button>
+                  <details>
+                    
+                  </details>
+              </td>
+              <td class="status__browser--edge status__completeness status__completeness--none">
+                none
+                  <button>Flags & Details</button>
+                  <details>
+                    
+                  </details>
+              </td>
+              <td class="status__browser--safari status__completeness status__completeness--none">
+                none
+                  <button>Flags & Details</button>
+                  <details>
+                    
+                  </details>
+              </td>
+        </tr>
+        <tr class="status__api status__api--propertiesandvalues">
+          <th>
+            <a href="https://drafts.css-houdini.org/css-properties-values-api/" class="status__api__name">CSS Properties &amp; Values API</a>
+          </th>
+              <td class="status__browser--chrome status__completeness status__completeness--none">
+                none
+                  <button>Flags & Details</button>
+                  <details>
+                    
+                  </details>
+              </td>
+              <td class="status__browser--firefox status__completeness status__completeness--none">
+                none
+                  <button>Flags & Details</button>
+                  <details>
+                    
+                  </details>
+              </td>
+              <td class="status__browser--opera status__completeness status__completeness--none">
+                none
+                  <button>Flags & Details</button>
+                  <details>
+                    
+                  </details>
+              </td>
+              <td class="status__browser--edge status__completeness status__completeness--none">
+                none
+                  <button>Flags & Details</button>
+                  <details>
+                    
+                  </details>
+              </td>
+              <td class="status__browser--safari status__completeness status__completeness--none">
+                none
+                  <button>Flags & Details</button>
+                  <details>
+                    
+                  </details>
+              </td>
+        </tr>
+        <tr class="status__api status__api--typedom">
+          <th>
+            <a href="https://drafts.css-houdini.org/css-typed-om/" class="status__api__name">CSS Typed OM</a>
+          </th>
+              <td class="status__browser--chrome status__completeness status__completeness--none">
+                none
+                  <button>Flags & Details</button>
+                  <details>
+                    
+                  </details>
+              </td>
+              <td class="status__browser--firefox status__completeness status__completeness--none">
+                none
+                  <button>Flags & Details</button>
+                  <details>
+                    
+                  </details>
+              </td>
+              <td class="status__browser--opera status__completeness status__completeness--none">
+                none
+                  <button>Flags & Details</button>
+                  <details>
+                    
+                  </details>
+              </td>
+              <td class="status__browser--edge status__completeness status__completeness--none">
+                none
+                  <button>Flags & Details</button>
+                  <details>
+                    
+                  </details>
+              </td>
+              <td class="status__browser--safari status__completeness status__completeness--none">
+                none
+                  <button>Flags & Details</button>
+                  <details>
+                    
+                  </details>
+              </td>
+        </tr>
+        <tr class="status__api status__api--fontmetrics">
+          <th>
+            <a href="https://drafts.css-houdini.org/font-metrics-api/" class="status__api__name">Font Metrics API</a>
+          </th>
+              <td class="status__browser--chrome status__completeness status__completeness--partial">
+                partial
+                  (Canary)
+                  <button>Flags & Details</button>
+                  <details>
+                    
+                  </details>
+              </td>
+              <td class="status__browser--firefox status__completeness status__completeness--none">
+                none
+                  <button>Flags & Details</button>
+                  <details>
+                    
+                  </details>
+              </td>
+              <td class="status__browser--opera status__completeness status__completeness--none">
+                none
+                  <button>Flags & Details</button>
+                  <details>
+                    
+                  </details>
+              </td>
+              <td class="status__browser--edge status__completeness status__completeness--none">
+                none
+                  <button>Flags & Details</button>
+                  <details>
+                    
+                  </details>
+              </td>
+              <td class="status__browser--safari status__completeness status__completeness--none">
+                none
+                  <button>Flags & Details</button>
+                  <details>
+                    
+                  </details>
+              </td>
+        </tr>
     </tbody>
   </table>
 </body>

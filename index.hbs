@@ -3,8 +3,26 @@
 <head>
   <title>Is Houdini Ready Yet?</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
     td {
       text-align: center;
+      padding: 5px;
+      vertical-align: center;
+    }
+    /* Rounded corners for status table */
+    tbody tr:first-of-type > td:first-of-type {
+      border-top-left-radius: 3px;
+    }
+    tbody tr:first-of-type > td:last-of-type {
+      border-top-right-radius: 3px;
+    }
+    tbody tr:last-of-type > td:first-of-type {
+      border-bottom-left-radius: 3px;
+    }
+    tbody tr:last-of-type > td:last-of-type {
+      border-bottom-right-radius: 3px;
     }
     thead td {
       vertical-align: top;
@@ -13,6 +31,30 @@
       display: block;
       height: 50px;
       margin: 0 auto;
+    }
+    .status__completeness button {
+      display: block;
+      border: 0;
+      border-radius: 3px;
+      background-color: rgb(255, 255, 255);
+      opacity: 0.4;
+      transition: opacity 0.3s ease-in-out;
+      width: 100%;
+    }
+    .status__completeness button:hover {
+      opacity: 0.8;
+    }
+    .status__completeness details {
+      display: none;
+    }
+    .status__completeness--none {
+      background-color: hsl(0, 50%, 65%);
+    }
+    .status__completeness--partial {
+      background-color: hsl(50, 70%, 60%);
+    }
+    .status__completeness--full {
+      background-color: hsl(75, 70%, 60%);
     }
   </style>
 </head>
@@ -31,28 +73,27 @@
     </thead>
     <tbody>
     {{#each api}}
-      <tr class="status__api status__api--{{tag}}">
-        <th>
-          <p class="status__api__name">{{name}}</p>
-          (<a href="{{spec}}">spec</a>)
-        </th>
-        {{#each ../browser}}
-          <td class="status__browser--{{tag}} status__completeness status__completeness--{{lookup (lookup (lookup ../../status ../tag) tag) "completeness"}}">
-            {{lookup (lookup (lookup ../../status ../tag) tag) "completeness"}}
-            {{#if (lookup (lookup (lookup ../../status ../tag) tag) "since")}}
-              ({{lookup (lookup (lookup ../../status ../tag) tag) "since"}})
-            {{/if}}
-            {{#if (lookup (lookup (lookup ../../status ../tag) tag) "comment")}}
-              <details>
-                <summary>Flags & Details</summary>
-                <div>
-                  {{lookup (lookup (lookup ../../status ../tag) tag) "comment"}}
-                </div>
-              </details>
-            {{/if}}
-          </td>
-        {{/each}}
-      </tr>
+      {{#with . as |api|}}
+        <tr class="status__api status__api--{{api.tag}}">
+          <th>
+            <a href="{{api.spec}}" class="status__api__name">{{api.name}}</a>
+          </th>
+          {{#each ../browser}}
+            {{#with . as |browser|}}
+              <td class="status__browser--{{tag}} status__completeness status__completeness--{{lookup (lookup (lookup ../../status api.tag) browser.tag) "completeness"}}">
+                {{lookup (lookup (lookup ../../status api.tag) browser.tag) "completeness"}}
+                {{#if (lookup (lookup (lookup ../../status api.tag) browser.tag) "since")}}
+                  ({{lookup (lookup (lookup ../../status api.tag) browser.tag) "since"}})
+                {{/if}}
+                  <button>Flags & Details</button>
+                  <details>
+                    {{read_partial api.tag browser.tag}}
+                  </details>
+              </td>
+            {{/with}}
+          {{/each}}
+        </tr>
+      {{/with}}
     {{/each}}
     </tbody>
   </table>

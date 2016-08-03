@@ -75,7 +75,6 @@
     "painting": {
       "chrome": {
         "completeness": "partial",
-        "comment": "Behind the “Experimental Web Platform features” flag",
         "since": "Canary"
       },
       "firefox": {
@@ -145,7 +144,6 @@
     "fontmetrics": {
       "chrome": {
         "completeness": "partial",
-        "comment": "Behind the “Experimental Web Platform features” flag",
         "since": "Canary"
       },
       "firefox": {
