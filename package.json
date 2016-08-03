@@ -1,0 +1,9 @@
+{
+  "name": "ishoudinireadyyet.com",
+  "version": "0.1.0",
+  "description": "Website to show browser support for Houdini APIs",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "handlebars": "^4.0.5"
+  }
+}

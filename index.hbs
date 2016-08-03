@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+  <title>Is Houdini Ready Yet?</title>
+</head>
+<body>
+  <table>
+    <thead>
+      <tr>
+        <td></td>
+        {{#each browser}}
+          <td>{{name}}</td>
+        {{/each}}
+      </tr>
+    </thead>
+    <tbody>
+    {{#each api}}
+      <tr>
+        <th>{{name}}</th>
+        {{#each ../browser}}
+          <td>{{status ../tag tag "completeness"}}</td>
+        {{/each}}
+      </tr>
+    {{/each}}
+    </tbody>
+  </table>
+</body>
+</html>

@@ -1,0 +1,99 @@
+{
+  "last_update": "2016-08-03",
+  "browser": [
+    {
+      "tag": "chrome",
+      "name": "Google Chrome",
+      "version": "52"
+    },
+    {
+      "tag": "firefox",
+      "name": "Mozilla Firefox",
+      "version": "48"
+    },
+    {
+      "tag": "opera",
+      "name": "Opera",
+      "version": "39"
+    },
+    {
+      "tag": "edge",
+      "name": "Microsoft Edge",
+      "version": "13"
+    },
+    {
+      "tag": "safari",
+      "name": "Apple Safari",
+      "version": "9.1"
+    }
+  ],
+  "api": [
+    {
+      "tag": "layout",
+      "name": "CSS Layout API",
+      "spec": "https://drafts.css-houdini.org/css-layout-api/"
+    },
+    {
+      "tag": "painting",
+      "name": "CSS Painting API",
+      "spec": "https://drafts.css-houdini.org/css-paint-api/"
+    },
+    {
+      "tag": "parser",
+      "name": "CSS Parser API",
+      "spec": "https://drafts.css-houdini.org/css-parser-api/"
+    },
+    {
+      "tag": "propertiesandvalues",
+      "name": "CSS Properties & Values API",
+      "spec": "https://drafts.css-houdini.org/css-properties-values-api/"
+    },
+    {
+      "tag": "typedom",
+      "name": "CSS Typed OM",
+      "spec": "https://drafts.css-houdini.org/css-typed-om/"
+    },
+    {
+      "tag": "fontmetrics",
+      "name": "Font Metrics API",
+      "spec": "https://drafts.css-houdini.org/font-metrics-api/"
+    }
+  ],
+  "status": {
+    "layout": {
+      "chrome": {
+        "completeness": "none"
+      },
+      "firefox": {
+        "completeness": "none"
+      },
+      "safari": {
+        "completeness": "none"
+      },
+      "opera": {
+        "completeness": "none"
+      },
+      "edge": {
+        "completeness": "none"
+      }
+    },
+    "painting": {
+      "chrome": {
+        "completeness": "partial",
+        "comment": "Need to enable “Experimental Web Platform features” flag on `chrome://flags`"
+      },
+      "firefox": {
+        "completeness": "none"
+      },
+      "safari": {
+        "completeness": "none"
+      },
+      "opera": {
+        "completeness": "none"
+      },
+      "edge": {
+        "completeness": "none"
+      }
+    }
+  }
+}
