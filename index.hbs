@@ -9,17 +9,23 @@
       <tr>
         <td class="empty"></td>
         {{#each browser}}
-          <td class="status__browser--{{tag}}">{{name}} ({{version}})</td>
+          <td class="status__browser--{{tag}}">{{name}}</td>
         {{/each}}
       </tr>
     </thead>
     <tbody>
     {{#each api}}
       <tr class="status__api--{{tag}}">
-        <th>{{name}} (<a href="{{spec}}">Spec</a>)</th>
+        <th>
+          <p class="status__api__name">{{name}}</p>
+          (<a href="{{spec}}">spec</a>)
+        </th>
         {{#each ../browser}}
           <td class="status__browser--{{tag}} status__completeness--{{lookup (lookup (lookup ../../status ../tag) tag) "completeness"}}">
             {{lookup (lookup (lookup ../../status ../tag) tag) "completeness"}}
+            {{#if (lookup (lookup (lookup ../../status ../tag) tag) "since")}}
+              ({{lookup (lookup (lookup ../../status ../tag) tag) "since"}})
+            {{/if}}
             {{#if (lookup (lookup (lookup ../../status ../tag) tag) "comment")}}
               <details>
                 <summary>Flags & Details</summary>

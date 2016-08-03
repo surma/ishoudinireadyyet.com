@@ -3,28 +3,23 @@
   "browser": [
     {
       "tag": "chrome",
-      "name": "Google Chrome",
-      "version": "52"
+      "name": "Google Chrome"
     },
     {
       "tag": "firefox",
-      "name": "Mozilla Firefox",
-      "version": "48"
+      "name": "Mozilla Firefox"
     },
     {
       "tag": "opera",
-      "name": "Opera",
-      "version": "39"
+      "name": "Opera"
     },
     {
       "tag": "edge",
-      "name": "Microsoft Edge",
-      "version": "13"
+      "name": "Microsoft Edge"
     },
     {
       "tag": "safari",
-      "name": "Apple Safari",
-      "version": "9.1"
+      "name": "Apple Safari"
     }
   ],
   "api": [
@@ -80,7 +75,8 @@
     "painting": {
       "chrome": {
         "completeness": "partial",
-        "comment": "Behind the “Experimental Web Platform features” flag"
+        "comment": "Behind the “Experimental Web Platform features” flag",
+        "since": "Canary"
       },
       "firefox": {
         "completeness": "none"
@@ -149,7 +145,8 @@
     "fontmetrics": {
       "chrome": {
         "completeness": "partial",
-        "comment": "Behind the “Experimental Web Platform features” flag"
+        "comment": "Behind the “Experimental Web Platform features” flag",
+        "since": "Canary"
       },
       "firefox": {
         "completeness": "none"
