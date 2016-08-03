@@ -80,7 +80,76 @@
     "painting": {
       "chrome": {
         "completeness": "partial",
-        "comment": "Need to enable “Experimental Web Platform features” flag on `chrome://flags`"
+        "comment": "Behind the “Experimental Web Platform features” flag"
+      },
+      "firefox": {
+        "completeness": "none"
+      },
+      "safari": {
+        "completeness": "none"
+      },
+      "opera": {
+        "completeness": "none"
+      },
+      "edge": {
+        "completeness": "none"
+      }
+    },
+    "parser": {
+      "chrome": {
+        "completeness": "none"
+      },
+      "firefox": {
+        "completeness": "none"
+      },
+      "safari": {
+        "completeness": "none"
+      },
+      "opera": {
+        "completeness": "none"
+      },
+      "edge": {
+        "completeness": "none"
+      }
+    },
+    "propertiesandvalues": {
+      "chrome": {
+        "completeness": "none"
+      },
+      "firefox": {
+        "completeness": "none"
+      },
+      "safari": {
+        "completeness": "none"
+      },
+      "opera": {
+        "completeness": "none"
+      },
+      "edge": {
+        "completeness": "none"
+      }
+    },
+    "typedom": {
+      "chrome": {
+        "completeness": "none"
+      },
+      "firefox": {
+        "completeness": "none"
+      },
+      "safari": {
+        "completeness": "none"
+      },
+      "opera": {
+        "completeness": "none"
+      },
+      "edge": {
+        "completeness": "none"
+      }
+    },
+    "fontmetrics": {
+      "chrome": {
+        "completeness": "partial",
+        "comment": "Behind the “Experimental Web Platform features” flag"
       },
       "firefox": {
         "completeness": "none"

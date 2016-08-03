@@ -7,18 +7,28 @@
   <table>
     <thead>
       <tr>
-        <td></td>
+        <td class="empty"></td>
         {{#each browser}}
-          <td>{{name}}</td>
+          <td class="status__browser--{{tag}}">{{name}} ({{version}})</td>
         {{/each}}
       </tr>
     </thead>
     <tbody>
     {{#each api}}
-      <tr>
-        <th>{{name}}</th>
+      <tr class="status__api--{{tag}}">
+        <th>{{name}} (<a href="{{spec}}">Spec</a>)</th>
         {{#each ../browser}}
-          <td>{{status ../tag tag "completeness"}}</td>
+          <td class="status__browser--{{tag}} status__completeness--{{lookup (lookup (lookup ../../status ../tag) tag) "completeness"}}">
+            {{lookup (lookup (lookup ../../status ../tag) tag) "completeness"}}
+            {{#if (lookup (lookup (lookup ../../status ../tag) tag) "comment")}}
+              <details>
+                <summary>Flags & Details</summary>
+                <div>
+                  {{lookup (lookup (lookup ../../status ../tag) tag) "comment"}}
+                </div>
+              </details>
+            {{/if}}
+          </td>
         {{/each}}
       </tr>
     {{/each}}
