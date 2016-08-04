@@ -4,6 +4,7 @@
   "short_name": "Houdini Ready?",
   "display": "browser",
   "start_url": "https://ishoudinireadyyet.com",
+  "theme_color": "#ffffff",
   "icons": [
     {
       "src": "images/star.png",
