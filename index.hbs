@@ -147,7 +147,6 @@
       left: 20px;
       right: 20px;
       bottom: 20px;
-      border-color: transparent;
     }
     .status__completeness__details.animated {
       transition: transform 0.3s ease-in-out;
@@ -201,42 +200,56 @@
     </tbody>
   </table>
   <script>
-    function showDetails(ev) {
-      const details = ev.target.parentNode.querySelector('.status__completeness__details');
-      details.classList.add('displayed', 'maximized');
-      const last = details.getBoundingClientRect();
-      const first = ev.target.parentNode.getBoundingClientRect();
-      details.dataset.transform = details.style.transform = `
-        translate(${first.left - last.left}px, ${first.top - last.top}px)
-        scale(${first.width/last.width}, ${first.height/last.height})
-      `;
-      requestAnimationFrame(function() {
+    (function() {
+      function showDetails(ev) {
+        const details = ev.target.parentNode.querySelector('.status__completeness__details');
+        details.classList.add('displayed', 'maximized');
+        const last = details.getBoundingClientRect();
+        const first = ev.target.parentNode.getBoundingClientRect();
+        details.dataset.transform = details.style.transform = `
+          translate(${first.left - last.left}px, ${first.top - last.top}px)
+          scale(${first.width/last.width}, ${first.height/last.height})
+        `;
         requestAnimationFrame(function() {
-          details.classList.add('visible', 'animated');
-          details.style.transform = 'none';
+          requestAnimationFrame(function() {
+            details.classList.add('visible', 'animated');
+            details.style.transform = 'none';
+          });
         });
+      }
+
+      function hideDetails(ev) {
+        const details = ev.target.parentNode;
+        details.addEventListener('transitionend', function once() {
+          details.removeEventListener('transitionend', once);
+          details.classList.remove('visible', 'animated', 'displayed', 'maximized');
+          details.dataset.transform = details.style.transform = '';
+        });
+        details.style.transform = details.dataset.transform;
+      }
+
+      // Register click handlers for all the buttons
+      const detailsbtns = document.querySelectorAll('.status__completeness > .status__completeness__detailsbutton');
+      for(let i = 0; i < detailsbtns.length; i++) {
+        detailsbtns[i].addEventListener('click', showDetails);
+      }
+      const closebtns = document.querySelectorAll('.status__completeness__details__close');
+      for(let i = 0; i < closebtns.length; i++) {
+        closebtns[i].addEventListener('click', hideDetails);
+      }
+
+      document.addEventListener('keydown', function (ev) {
+        if (ev.key !== 'Escape') {
+          return;
+        }
+        const openDetails = document.querySelector('.status__completeness__details.visible');
+        if (!openDetails) {
+          return;
+        }
+
+        openDetails.querySelector('.status__completeness__details__close').click();
       });
-    }
-
-    function hideDetails(ev) {
-      const details = ev.target.parentNode;
-      details.addEventListener('transitionend', function once() {
-        details.removeEventListener('transitionend', once);
-        details.classList.remove('visible', 'animated', 'displayed', 'maximized');
-        details.dataset.transform = details.style.transform = '';
-      });
-      details.style.transform = details.dataset.transform;
-    }
-
-    const detailsbtns = document.querySelectorAll('.status__completeness > .status__completeness__detailsbutton');
-    for(let i = 0; i < detailsbtns.length; i++) {
-      detailsbtns[i].addEventListener('click', showDetails);
-    }
-    const closebtns = document.querySelectorAll('.status__completeness__details__close');
-    for(let i = 0; i < closebtns.length; i++) {
-      closebtns[i].addEventListener('click', hideDetails);
-    }
-
+    })();
   </script>
 </body>
 </html>
