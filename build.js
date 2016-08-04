@@ -11,6 +11,7 @@ Handlebars.registerHelper('read_partial', (api, browser) => {
 });
 
 const data = require('./data.json');
+data.browser.sort((a, b) => a.name > b.name);
 const rawTpl = fs.readFileSync('index.hbs', 'utf-8');
 const tpl = Handlebars.compile(rawTpl);
 fs.writeFileSync('index.html', tpl(data), 'utf-8');
