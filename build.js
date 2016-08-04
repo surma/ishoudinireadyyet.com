@@ -12,8 +12,7 @@ const htmlmin = require('htmlmin');
 const htmlminOpts = {
   cssmin: true,
   jsmin: true,
-  removeComments: true,
-  collapseWhitespace: true
+  removeComments: true
 };
 
 const fs = require('fs');
