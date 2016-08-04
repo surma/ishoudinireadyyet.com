@@ -1,6 +1,7 @@
 {
   "name": "ishoudinireadyyet.com",
   "version": "0.1.0",
+  "repository": "https://github.com/surma/ishoudinireadyyet.com",
   "description": "Website to show browser support for Houdini APIs",
   "license": "Apache-2.0",
   "dependencies": {
