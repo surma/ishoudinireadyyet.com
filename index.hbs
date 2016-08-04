@@ -202,14 +202,13 @@
   <script>
     (function() {
       function showDetails(ev) {
-        const details = ev.target.parentNode.querySelector('.status__completeness__details');
+        var details = ev.target.parentNode.querySelector('.status__completeness__details');
         details.classList.add('displayed', 'maximized');
-        const last = details.getBoundingClientRect();
-        const first = ev.target.parentNode.getBoundingClientRect();
-        details.dataset.transform = details.style.transform = `
-          translate(${first.left - last.left}px, ${first.top - last.top}px)
-          scale(${first.width/last.width}, ${first.height/last.height})
-        `;
+        var last = details.getBoundingClientRect();
+        var first = ev.target.parentNode.getBoundingClientRect();
+        details.dataset.transform = details.style.transform =
+          'translate(' + (first.left - last.left) + 'px, ' + (first.top - last.top) + 'px)' +
+          'scale(' + (first.width/last.width) + ', ' + (first.height/last.height) + ')';
         requestAnimationFrame(function() {
           requestAnimationFrame(function() {
             details.classList.add('visible', 'animated');
@@ -219,7 +218,7 @@
       }
 
       function hideDetails(ev) {
-        const details = ev.target.parentNode;
+        var details = ev.target.parentNode;
         details.addEventListener('transitionend', function once() {
           details.removeEventListener('transitionend', once);
           details.classList.remove('visible', 'animated', 'displayed', 'maximized');
@@ -229,12 +228,12 @@
       }
 
       // Register click handlers for all the buttons
-      const detailsbtns = document.querySelectorAll('.status__completeness > .status__completeness__detailsbutton');
-      for(let i = 0; i < detailsbtns.length; i++) {
+      var detailsbtns = document.querySelectorAll('.status__completeness > .status__completeness__detailsbutton');
+      for(var i = 0; i < detailsbtns.length; i++) {
         detailsbtns[i].addEventListener('click', showDetails);
       }
-      const closebtns = document.querySelectorAll('.status__completeness__details__close');
-      for(let i = 0; i < closebtns.length; i++) {
+      var closebtns = document.querySelectorAll('.status__completeness__details__close');
+      for(var i = 0; i < closebtns.length; i++) {
         closebtns[i].addEventListener('click', hideDetails);
       }
 
@@ -242,7 +241,7 @@
         if (ev.key !== 'Escape') {
           return;
         }
-        const openDetails = document.querySelector('.status__completeness__details.visible');
+        var openDetails = document.querySelector('.status__completeness__details.visible');
         if (!openDetails) {
           return;
         }

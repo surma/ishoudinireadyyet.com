@@ -4,6 +4,7 @@
   "description": "Website to show browser support for Houdini APIs",
   "license": "Apache-2.0",
   "dependencies": {
-    "handlebars": "^4.0.5"
+    "handlebars": "^4.0.5",
+    "htmlmin": "0.0.6"
   }
 }
