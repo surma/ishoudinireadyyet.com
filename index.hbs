@@ -9,7 +9,6 @@
     }
     html, body {
       width: 100vw;
-      min-height: 100vh;
       margin: 0;
       padding: 0;
     }
@@ -25,11 +24,32 @@
     }
     table {
       width: 100%;
+      cell-spacing: 5px;
     }
     td {
       text-align: center;
       padding: 5px;
       vertical-align: center;
+    }
+    th a {
+      text-decoration: none;
+      color: black;
+      display: flex;
+      align-items: center;
+    }
+    th a:hover {
+      text-decoration: underline;
+    }
+    th a:before {
+      content: '';
+      background-image: url('/images/link.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 1em;
+      height: 1em;
+      display: inline-block;
+      margin-right: 3px;
+      flex-shrink: 0;
     }
     /* Rounded corners for status table */
     tbody tr:first-of-type > td:first-of-type {
@@ -52,6 +72,9 @@
       height: 50px;
       margin: 10px auto;
     }
+    .status__completeness {
+      box-sizing: content-box;
+    }
     .status__completeness button {
       display: block;
       border: 0;
@@ -59,19 +82,21 @@
       background-color: rgb(255, 255, 255);
       opacity: 0.4;
       transition: opacity 0.3s ease-in-out;
-      margin: 10px;
+      margin-top: 10px;
+      padding: 10px;
       font-size: 1em;
+      width: 100%;
     }
     .status__completeness button:hover {
       opacity: 0.8;
     }
-    .status__completeness--none {
+    .status__completeness--no {
       background-color: hsl(0, 50%, 65%);
     }
-    .status__completeness--partial {
+    .status__completeness--partially {
       background-color: hsl(50, 70%, 60%);
     }
-    .status__completeness--full {
+    .status__completeness--yes {
       background-color: hsl(75, 70%, 60%);
     }
     .status__completeness__details {
@@ -84,6 +109,7 @@
       z-index: 1;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.54);
       border-radius: 3px;
+      padding: 30px;
 
       display: flex;
       flex-direction: column;
@@ -144,13 +170,15 @@
                 {{#if (lookup (lookup (lookup ../../status api.tag) browser.tag) "since")}}
                   ({{lookup (lookup (lookup ../../status api.tag) browser.tag) "since"}})
                 {{/if}}
-                  <button class="status__completeness__detailsbutton">Flags & Details</button>
+                {{#if (lookup (lookup (lookup ../../status api.tag) browser.tag) "has_details")}}
+                  <button class="status__completeness__detailsbutton">Details</button>
                   <div class="status__completeness__details">
                     <div class="status__completeness__details__content">
                       {{{read_partial api.tag browser.tag}}}
                     </div>
                     <button class="status__completeness__details__close">Close</button>
                   </div>
+                {{/if}}
               </td>
             {{/with}}
           {{/each}}

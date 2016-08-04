@@ -25,27 +25,27 @@
   "api": [
     {
       "tag": "layout",
-      "name": "CSS Layout API",
+      "name": "Layout API",
       "spec": "https://drafts.css-houdini.org/css-layout-api/"
     },
     {
       "tag": "painting",
-      "name": "CSS Painting API",
+      "name": "Painting API",
       "spec": "https://drafts.css-houdini.org/css-paint-api/"
     },
     {
       "tag": "parser",
-      "name": "CSS Parser API",
+      "name": "Parser API",
       "spec": "https://drafts.css-houdini.org/css-parser-api/"
     },
     {
       "tag": "propertiesandvalues",
-      "name": "CSS Properties & Values API",
+      "name": "Properties & Values API",
       "spec": "https://drafts.css-houdini.org/css-properties-values-api/"
     },
     {
       "tag": "typedom",
-      "name": "CSS Typed OM",
+      "name": "Typed OM",
       "spec": "https://drafts.css-houdini.org/css-typed-om/"
     },
     {
@@ -57,106 +57,107 @@
   "status": {
     "layout": {
       "chrome": {
-        "completeness": "none"
+        "completeness": "no"
       },
       "firefox": {
-        "completeness": "none"
+        "completeness": "no"
       },
       "safari": {
-        "completeness": "none"
+        "completeness": "no"
       },
       "opera": {
-        "completeness": "none"
+        "completeness": "no"
       },
       "edge": {
-        "completeness": "none"
+        "completeness": "no"
       }
     },
     "painting": {
       "chrome": {
-        "completeness": "partial",
+        "completeness": "partially",
+        "has_details": true,
         "since": "Canary"
       },
       "firefox": {
-        "completeness": "none"
+        "completeness": "no"
       },
       "safari": {
-        "completeness": "none"
+        "completeness": "no"
       },
       "opera": {
-        "completeness": "none"
+        "completeness": "no"
       },
       "edge": {
-        "completeness": "none"
+        "completeness": "no"
       }
     },
     "parser": {
       "chrome": {
-        "completeness": "none"
+        "completeness": "no"
       },
       "firefox": {
-        "completeness": "none"
+        "completeness": "no"
       },
       "safari": {
-        "completeness": "none"
+        "completeness": "no"
       },
       "opera": {
-        "completeness": "none"
+        "completeness": "no"
       },
       "edge": {
-        "completeness": "none"
+        "completeness": "no"
       }
     },
     "propertiesandvalues": {
       "chrome": {
-        "completeness": "none"
+        "completeness": "no"
       },
       "firefox": {
-        "completeness": "none"
+        "completeness": "no"
       },
       "safari": {
-        "completeness": "none"
+        "completeness": "no"
       },
       "opera": {
-        "completeness": "none"
+        "completeness": "no"
       },
       "edge": {
-        "completeness": "none"
+        "completeness": "no"
       }
     },
     "typedom": {
       "chrome": {
-        "completeness": "none"
+        "completeness": "partially",
+        "since": "Canary"
       },
       "firefox": {
-        "completeness": "none"
+        "completeness": "no"
       },
       "safari": {
-        "completeness": "none"
+        "completeness": "no"
       },
       "opera": {
-        "completeness": "none"
+        "completeness": "no"
       },
       "edge": {
-        "completeness": "none"
+        "completeness": "no"
       }
     },
     "fontmetrics": {
       "chrome": {
-        "completeness": "partial",
-        "since": "Canary"
+        "completeness": "no"
       },
       "firefox": {
-        "completeness": "none"
+        "completeness": "no"
       },
       "safari": {
-        "completeness": "none"
+        "completeness": "no"
       },
       "opera": {
-        "completeness": "none"
+        "completeness": "no"
       },
       "edge": {
-        "completeness": "none"
+        "completeness": "no"
       }
     }
   }

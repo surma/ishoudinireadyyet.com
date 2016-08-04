@@ -9,7 +9,6 @@
     }
     html, body {
       width: 100vw;
-      min-height: 100vh;
       margin: 0;
       padding: 0;
     }
@@ -25,11 +24,32 @@
     }
     table {
       width: 100%;
+      cell-spacing: 5px;
     }
     td {
       text-align: center;
       padding: 5px;
       vertical-align: center;
+    }
+    th a {
+      text-decoration: none;
+      color: black;
+      display: flex;
+      align-items: center;
+    }
+    th a:hover {
+      text-decoration: underline;
+    }
+    th a:before {
+      content: '';
+      background-image: url('/images/link.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 1em;
+      height: 1em;
+      display: inline-block;
+      margin-right: 3px;
+      flex-shrink: 0;
     }
     /* Rounded corners for status table */
     tbody tr:first-of-type > td:first-of-type {
@@ -52,6 +72,9 @@
       height: 50px;
       margin: 10px auto;
     }
+    .status__completeness {
+      box-sizing: content-box;
+    }
     .status__completeness button {
       display: block;
       border: 0;
@@ -59,19 +82,21 @@
       background-color: rgb(255, 255, 255);
       opacity: 0.4;
       transition: opacity 0.3s ease-in-out;
-      margin: 10px;
+      margin-top: 10px;
+      padding: 10px;
       font-size: 1em;
+      width: 100%;
     }
     .status__completeness button:hover {
       opacity: 0.8;
     }
-    .status__completeness--none {
+    .status__completeness--no {
       background-color: hsl(0, 50%, 65%);
     }
-    .status__completeness--partial {
+    .status__completeness--partially {
       background-color: hsl(50, 70%, 60%);
     }
-    .status__completeness--full {
+    .status__completeness--yes {
       background-color: hsl(75, 70%, 60%);
     }
     .status__completeness__details {
@@ -84,6 +109,7 @@
       z-index: 1;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.54);
       border-radius: 3px;
+      padding: 30px;
 
       display: flex;
       flex-direction: column;
@@ -147,67 +173,32 @@
     <tbody>
         <tr class="status__api status__api--layout">
           <th>
-            <a href="https://drafts.css-houdini.org/css-layout-api/" class="status__api__name">CSS Layout API</a>
+            <a href="https://drafts.css-houdini.org/css-layout-api/" class="status__api__name">Layout API</a>
           </th>
-              <td class="status__browser--chrome status__completeness status__completeness--none">
-                none
-                  <button class="status__completeness__detailsbutton">Flags & Details</button>
-                  <div class="status__completeness__details">
-                    <div class="status__completeness__details__content">
-                      
-                    </div>
-                    <button class="status__completeness__details__close">Close</button>
-                  </div>
+              <td class="status__browser--chrome status__completeness status__completeness--no">
+                no
               </td>
-              <td class="status__browser--firefox status__completeness status__completeness--none">
-                none
-                  <button class="status__completeness__detailsbutton">Flags & Details</button>
-                  <div class="status__completeness__details">
-                    <div class="status__completeness__details__content">
-                      
-                    </div>
-                    <button class="status__completeness__details__close">Close</button>
-                  </div>
+              <td class="status__browser--firefox status__completeness status__completeness--no">
+                no
               </td>
-              <td class="status__browser--opera status__completeness status__completeness--none">
-                none
-                  <button class="status__completeness__detailsbutton">Flags & Details</button>
-                  <div class="status__completeness__details">
-                    <div class="status__completeness__details__content">
-                      
-                    </div>
-                    <button class="status__completeness__details__close">Close</button>
-                  </div>
+              <td class="status__browser--opera status__completeness status__completeness--no">
+                no
               </td>
-              <td class="status__browser--edge status__completeness status__completeness--none">
-                none
-                  <button class="status__completeness__detailsbutton">Flags & Details</button>
-                  <div class="status__completeness__details">
-                    <div class="status__completeness__details__content">
-                      
-                    </div>
-                    <button class="status__completeness__details__close">Close</button>
-                  </div>
+              <td class="status__browser--edge status__completeness status__completeness--no">
+                no
               </td>
-              <td class="status__browser--safari status__completeness status__completeness--none">
-                none
-                  <button class="status__completeness__detailsbutton">Flags & Details</button>
-                  <div class="status__completeness__details">
-                    <div class="status__completeness__details__content">
-                      
-                    </div>
-                    <button class="status__completeness__details__close">Close</button>
-                  </div>
+              <td class="status__browser--safari status__completeness status__completeness--no">
+                no
               </td>
         </tr>
         <tr class="status__api status__api--painting">
           <th>
-            <a href="https://drafts.css-houdini.org/css-paint-api/" class="status__api__name">CSS Painting API</a>
+            <a href="https://drafts.css-houdini.org/css-paint-api/" class="status__api__name">Painting API</a>
           </th>
-              <td class="status__browser--chrome status__completeness status__completeness--partial">
-                partial
+              <td class="status__browser--chrome status__completeness status__completeness--partially">
+                partially
                   (Canary)
-                  <button class="status__completeness__detailsbutton">Flags & Details</button>
+                  <button class="status__completeness__detailsbutton">Details</button>
                   <div class="status__completeness__details">
                     <div class="status__completeness__details__content">
                       Behind the “Experimental Web Platform features” flag.
@@ -216,266 +207,98 @@
                     <button class="status__completeness__details__close">Close</button>
                   </div>
               </td>
-              <td class="status__browser--firefox status__completeness status__completeness--none">
-                none
-                  <button class="status__completeness__detailsbutton">Flags & Details</button>
-                  <div class="status__completeness__details">
-                    <div class="status__completeness__details__content">
-                      
-                    </div>
-                    <button class="status__completeness__details__close">Close</button>
-                  </div>
+              <td class="status__browser--firefox status__completeness status__completeness--no">
+                no
               </td>
-              <td class="status__browser--opera status__completeness status__completeness--none">
-                none
-                  <button class="status__completeness__detailsbutton">Flags & Details</button>
-                  <div class="status__completeness__details">
-                    <div class="status__completeness__details__content">
-                      
-                    </div>
-                    <button class="status__completeness__details__close">Close</button>
-                  </div>
+              <td class="status__browser--opera status__completeness status__completeness--no">
+                no
               </td>
-              <td class="status__browser--edge status__completeness status__completeness--none">
-                none
-                  <button class="status__completeness__detailsbutton">Flags & Details</button>
-                  <div class="status__completeness__details">
-                    <div class="status__completeness__details__content">
-                      
-                    </div>
-                    <button class="status__completeness__details__close">Close</button>
-                  </div>
+              <td class="status__browser--edge status__completeness status__completeness--no">
+                no
               </td>
-              <td class="status__browser--safari status__completeness status__completeness--none">
-                none
-                  <button class="status__completeness__detailsbutton">Flags & Details</button>
-                  <div class="status__completeness__details">
-                    <div class="status__completeness__details__content">
-                      
-                    </div>
-                    <button class="status__completeness__details__close">Close</button>
-                  </div>
+              <td class="status__browser--safari status__completeness status__completeness--no">
+                no
               </td>
         </tr>
         <tr class="status__api status__api--parser">
           <th>
-            <a href="https://drafts.css-houdini.org/css-parser-api/" class="status__api__name">CSS Parser API</a>
+            <a href="https://drafts.css-houdini.org/css-parser-api/" class="status__api__name">Parser API</a>
           </th>
-              <td class="status__browser--chrome status__completeness status__completeness--none">
-                none
-                  <button class="status__completeness__detailsbutton">Flags & Details</button>
-                  <div class="status__completeness__details">
-                    <div class="status__completeness__details__content">
-                      
-                    </div>
-                    <button class="status__completeness__details__close">Close</button>
-                  </div>
+              <td class="status__browser--chrome status__completeness status__completeness--no">
+                no
               </td>
-              <td class="status__browser--firefox status__completeness status__completeness--none">
-                none
-                  <button class="status__completeness__detailsbutton">Flags & Details</button>
-                  <div class="status__completeness__details">
-                    <div class="status__completeness__details__content">
-                      
-                    </div>
-                    <button class="status__completeness__details__close">Close</button>
-                  </div>
+              <td class="status__browser--firefox status__completeness status__completeness--no">
+                no
               </td>
-              <td class="status__browser--opera status__completeness status__completeness--none">
-                none
-                  <button class="status__completeness__detailsbutton">Flags & Details</button>
-                  <div class="status__completeness__details">
-                    <div class="status__completeness__details__content">
-                      
-                    </div>
-                    <button class="status__completeness__details__close">Close</button>
-                  </div>
+              <td class="status__browser--opera status__completeness status__completeness--no">
+                no
               </td>
-              <td class="status__browser--edge status__completeness status__completeness--none">
-                none
-                  <button class="status__completeness__detailsbutton">Flags & Details</button>
-                  <div class="status__completeness__details">
-                    <div class="status__completeness__details__content">
-                      
-                    </div>
-                    <button class="status__completeness__details__close">Close</button>
-                  </div>
+              <td class="status__browser--edge status__completeness status__completeness--no">
+                no
               </td>
-              <td class="status__browser--safari status__completeness status__completeness--none">
-                none
-                  <button class="status__completeness__detailsbutton">Flags & Details</button>
-                  <div class="status__completeness__details">
-                    <div class="status__completeness__details__content">
-                      
-                    </div>
-                    <button class="status__completeness__details__close">Close</button>
-                  </div>
+              <td class="status__browser--safari status__completeness status__completeness--no">
+                no
               </td>
         </tr>
         <tr class="status__api status__api--propertiesandvalues">
           <th>
-            <a href="https://drafts.css-houdini.org/css-properties-values-api/" class="status__api__name">CSS Properties &amp; Values API</a>
+            <a href="https://drafts.css-houdini.org/css-properties-values-api/" class="status__api__name">Properties &amp; Values API</a>
           </th>
-              <td class="status__browser--chrome status__completeness status__completeness--none">
-                none
-                  <button class="status__completeness__detailsbutton">Flags & Details</button>
-                  <div class="status__completeness__details">
-                    <div class="status__completeness__details__content">
-                      
-                    </div>
-                    <button class="status__completeness__details__close">Close</button>
-                  </div>
+              <td class="status__browser--chrome status__completeness status__completeness--no">
+                no
               </td>
-              <td class="status__browser--firefox status__completeness status__completeness--none">
-                none
-                  <button class="status__completeness__detailsbutton">Flags & Details</button>
-                  <div class="status__completeness__details">
-                    <div class="status__completeness__details__content">
-                      
-                    </div>
-                    <button class="status__completeness__details__close">Close</button>
-                  </div>
+              <td class="status__browser--firefox status__completeness status__completeness--no">
+                no
               </td>
-              <td class="status__browser--opera status__completeness status__completeness--none">
-                none
-                  <button class="status__completeness__detailsbutton">Flags & Details</button>
-                  <div class="status__completeness__details">
-                    <div class="status__completeness__details__content">
-                      
-                    </div>
-                    <button class="status__completeness__details__close">Close</button>
-                  </div>
+              <td class="status__browser--opera status__completeness status__completeness--no">
+                no
               </td>
-              <td class="status__browser--edge status__completeness status__completeness--none">
-                none
-                  <button class="status__completeness__detailsbutton">Flags & Details</button>
-                  <div class="status__completeness__details">
-                    <div class="status__completeness__details__content">
-                      
-                    </div>
-                    <button class="status__completeness__details__close">Close</button>
-                  </div>
+              <td class="status__browser--edge status__completeness status__completeness--no">
+                no
               </td>
-              <td class="status__browser--safari status__completeness status__completeness--none">
-                none
-                  <button class="status__completeness__detailsbutton">Flags & Details</button>
-                  <div class="status__completeness__details">
-                    <div class="status__completeness__details__content">
-                      
-                    </div>
-                    <button class="status__completeness__details__close">Close</button>
-                  </div>
+              <td class="status__browser--safari status__completeness status__completeness--no">
+                no
               </td>
         </tr>
         <tr class="status__api status__api--typedom">
           <th>
-            <a href="https://drafts.css-houdini.org/css-typed-om/" class="status__api__name">CSS Typed OM</a>
+            <a href="https://drafts.css-houdini.org/css-typed-om/" class="status__api__name">Typed OM</a>
           </th>
-              <td class="status__browser--chrome status__completeness status__completeness--none">
-                none
-                  <button class="status__completeness__detailsbutton">Flags & Details</button>
-                  <div class="status__completeness__details">
-                    <div class="status__completeness__details__content">
-                      
-                    </div>
-                    <button class="status__completeness__details__close">Close</button>
-                  </div>
+              <td class="status__browser--chrome status__completeness status__completeness--partially">
+                partially
+                  (Canary)
               </td>
-              <td class="status__browser--firefox status__completeness status__completeness--none">
-                none
-                  <button class="status__completeness__detailsbutton">Flags & Details</button>
-                  <div class="status__completeness__details">
-                    <div class="status__completeness__details__content">
-                      
-                    </div>
-                    <button class="status__completeness__details__close">Close</button>
-                  </div>
+              <td class="status__browser--firefox status__completeness status__completeness--no">
+                no
               </td>
-              <td class="status__browser--opera status__completeness status__completeness--none">
-                none
-                  <button class="status__completeness__detailsbutton">Flags & Details</button>
-                  <div class="status__completeness__details">
-                    <div class="status__completeness__details__content">
-                      
-                    </div>
-                    <button class="status__completeness__details__close">Close</button>
-                  </div>
+              <td class="status__browser--opera status__completeness status__completeness--no">
+                no
               </td>
-              <td class="status__browser--edge status__completeness status__completeness--none">
-                none
-                  <button class="status__completeness__detailsbutton">Flags & Details</button>
-                  <div class="status__completeness__details">
-                    <div class="status__completeness__details__content">
-                      
-                    </div>
-                    <button class="status__completeness__details__close">Close</button>
-                  </div>
+              <td class="status__browser--edge status__completeness status__completeness--no">
+                no
               </td>
-              <td class="status__browser--safari status__completeness status__completeness--none">
-                none
-                  <button class="status__completeness__detailsbutton">Flags & Details</button>
-                  <div class="status__completeness__details">
-                    <div class="status__completeness__details__content">
-                      
-                    </div>
-                    <button class="status__completeness__details__close">Close</button>
-                  </div>
+              <td class="status__browser--safari status__completeness status__completeness--no">
+                no
               </td>
         </tr>
         <tr class="status__api status__api--fontmetrics">
           <th>
             <a href="https://drafts.css-houdini.org/font-metrics-api/" class="status__api__name">Font Metrics API</a>
           </th>
-              <td class="status__browser--chrome status__completeness status__completeness--partial">
-                partial
-                  (Canary)
-                  <button class="status__completeness__detailsbutton">Flags & Details</button>
-                  <div class="status__completeness__details">
-                    <div class="status__completeness__details__content">
-                      
-                    </div>
-                    <button class="status__completeness__details__close">Close</button>
-                  </div>
+              <td class="status__browser--chrome status__completeness status__completeness--no">
+                no
               </td>
-              <td class="status__browser--firefox status__completeness status__completeness--none">
-                none
-                  <button class="status__completeness__detailsbutton">Flags & Details</button>
-                  <div class="status__completeness__details">
-                    <div class="status__completeness__details__content">
-                      
-                    </div>
-                    <button class="status__completeness__details__close">Close</button>
-                  </div>
+              <td class="status__browser--firefox status__completeness status__completeness--no">
+                no
               </td>
-              <td class="status__browser--opera status__completeness status__completeness--none">
-                none
-                  <button class="status__completeness__detailsbutton">Flags & Details</button>
-                  <div class="status__completeness__details">
-                    <div class="status__completeness__details__content">
-                      
-                    </div>
-                    <button class="status__completeness__details__close">Close</button>
-                  </div>
+              <td class="status__browser--opera status__completeness status__completeness--no">
+                no
               </td>
-              <td class="status__browser--edge status__completeness status__completeness--none">
-                none
-                  <button class="status__completeness__detailsbutton">Flags & Details</button>
-                  <div class="status__completeness__details">
-                    <div class="status__completeness__details__content">
-                      
-                    </div>
-                    <button class="status__completeness__details__close">Close</button>
-                  </div>
+              <td class="status__browser--edge status__completeness status__completeness--no">
+                no
               </td>
-              <td class="status__browser--safari status__completeness status__completeness--none">
-                none
-                  <button class="status__completeness__detailsbutton">Flags & Details</button>
-                  <div class="status__completeness__details">
-                    <div class="status__completeness__details__content">
-                      
-                    </div>
-                    <button class="status__completeness__details__close">Close</button>
-                  </div>
+              <td class="status__browser--safari status__completeness status__completeness--no">
+                no
               </td>
         </tr>
     </tbody>
