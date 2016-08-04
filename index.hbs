@@ -25,7 +25,8 @@
     }
     table {
       width: 100%;
-      cell-spacing: 5px;
+      opacity: 1;
+      transition: opacity 0.3s ease-in-out;
     }
     td {
       text-align: center;
@@ -194,7 +195,7 @@
     {{#with . as |api|}}
       {{#each ../browser}}
         {{#with . as |browser|}}
-          <div id="{{api.tag}}_{{browser.tag}}" class="details details--{{lookup (lookup (lookup ../../status api.tag) browser.tag) "completeness"}}">
+          <div id="{{api.tag}}_{{browser.tag}}" class="details details--{{lookup (lookup (lookup ../../status api.tag) browser.tag) "completeness"}}" data-browser="{{browser.tag}}" data-api="{{api.tag}}">
             <h2 class="details__title">{{api.name}} in {{browser.name}}</h2>
             <div class="details__content">
               {{{read_partial api.tag browser.tag}}}
@@ -207,6 +208,8 @@
   {{/each}}
   <script>
     (function() {
+      var table = document.querySelector('table');
+
       function showDetails(ev) {
         var details = document.getElementById(ev.target.dataset.detailsId);
         details.classList.add('displayed', 'maximized');
@@ -221,6 +224,16 @@
             details.style.transform = 'none';
           });
         });
+
+        // Fade out table for a11y
+        table.addEventListener('transitionend', function once(ev) {
+          if (ev.target !== table) {
+            return;
+          }
+          table.removeEventListener('transitionend', once);
+          table.style.visibility = 'hidden';
+        });
+        table.style.opacity = 0;
       }
 
       function hideDetails(ev) {
@@ -231,6 +244,21 @@
           details.dataset.transform = details.style.transform = '';
         });
         details.style.transform = details.dataset.transform;
+
+        // Fade in table
+        table.style.visibility = 'visible';
+        requestAnimationFrame(function() {
+          requestAnimationFrame(function() {
+            table.style.opacity = 1;
+
+            // Focus details button in cell
+            document
+              .querySelector('.status__api--' + details.dataset.api)
+              .querySelector('.status__browser--' + details.dataset.browser)
+              .querySelector('button').focus();
+          });
+        });
+
       }
 
       // Register click handlers for all the buttons
