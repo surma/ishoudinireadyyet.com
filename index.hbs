@@ -10,7 +10,6 @@
       box-sizing: border-box;
     }
     html, body {
-      width: 100vw;
       margin: 0;
       padding: 0;
     }
@@ -62,6 +61,21 @@
       margin-right: 3px;
       flex-shrink: 0;
     }
+    button {
+      display: block;
+      border: 0;
+      border-radius: 3px;
+      background-color: rgb(255, 255, 255);
+      opacity: 0.4;
+      transition: opacity 0.3s ease-in-out;
+      margin-top: 10px;
+      padding: 10px;
+      font-size: 1em;
+      width: 100%;
+    }
+    button:hover {
+      opacity: 0.8;
+    }
     /* Rounded corners for status table */
     tbody tr:first-of-type > td:first-of-type {
       border-top-left-radius: 3px;
@@ -83,39 +97,23 @@
       height: 50px;
       margin: 10px auto;
     }
-    .status__completeness {
-      box-sizing: content-box;
-    }
-    .status__completeness button {
-      display: block;
-      border: 0;
-      border-radius: 3px;
-      background-color: rgb(255, 255, 255);
-      opacity: 0.4;
-      transition: opacity 0.3s ease-in-out;
-      margin-top: 10px;
-      padding: 10px;
-      font-size: 1em;
-      width: 100%;
-    }
-    .status__completeness button:hover {
-      opacity: 0.8;
-    }
+    .details--no,
     .status__completeness--no {
       background-color: hsl(0, 50%, 65%);
     }
+    .details--partially,
     .status__completeness--partially {
       background-color: hsl(50, 70%, 60%);
     }
+    .details--yes,
     .status__completeness--yes {
       background-color: hsl(75, 70%, 60%);
     }
-    .status__completeness__details {
+    .details {
       visibility: hidden;
       opacity: 0;
       position: fixed;
       will-change: transform;
-      background-color: inherit;
       transform-origin: 0% 0%;
       z-index: 1;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.54);
@@ -127,28 +125,28 @@
       align-items: stretch;
       justify-content: center;
     }
-    .status__completeness__details > .status__completeness__details__content {
+    .details > .details__content {
       flex-grow: 0.2;
       display: flex;
       justify-content: center;
       align-items: center;
     }
-    .status__completeness__details__close {
+    .details__close {
       height: 40px;
     }
-    .status__completeness__details.displayed {
+    .details.displayed {
       visibility: visible;
     }
-    .status__completeness__details.visible {
+    .details.visible {
       opacity: 1;
     }
-    .status__completeness__details.maximized {
+    .details.maximized {
       top: 20px;
       left: 20px;
       right: 20px;
       bottom: 20px;
     }
-    .status__completeness__details.animated {
+    .details.animated {
       transition: transform 0.3s ease-in-out;
     }
   </style>
@@ -182,14 +180,7 @@
                   ({{lookup (lookup (lookup ../../status api.tag) browser.tag) "since"}})
                 {{/if}}
                 {{#if (lookup (lookup (lookup ../../status api.tag) browser.tag) "has_details")}}
-                  <button class="status__completeness__detailsbutton">Details</button>
-                  <div class="status__completeness__details">
-                    <h2 class="status__completeness__title">{{api.name}} in {{browser.name}}</h2>
-                    <div class="status__completeness__details__content">
-                      {{{read_partial api.tag browser.tag}}}
-                    </div>
-                    <button class="status__completeness__details__close">Close</button>
-                  </div>
+                  <button class="status__completeness__detailsbutton" data-details-id="{{api.tag}}_{{browser.tag}}" data-browser="{{browser.tag}}" data-api="{{api.tag}}">Details</button>
                 {{/if}}
               </td>
             {{/with}}
@@ -199,10 +190,25 @@
     {{/each}}
     </tbody>
   </table>
+  {{#each api}}
+    {{#with . as |api|}}
+      {{#each ../browser}}
+        {{#with . as |browser|}}
+          <div id="{{api.tag}}_{{browser.tag}}" class="details details--{{lookup (lookup (lookup ../../status api.tag) browser.tag) "completeness"}}">
+            <h2 class="details__title">{{api.name}} in {{browser.name}}</h2>
+            <div class="details__content">
+              {{{read_partial api.tag browser.tag}}}
+            </div>
+            <button class="details__close">Close</button>
+          </div>
+        {{/with}}
+      {{/each}}
+    {{/with}}
+  {{/each}}
   <script>
     (function() {
       function showDetails(ev) {
-        var details = ev.target.parentNode.querySelector('.status__completeness__details');
+        var details = document.getElementById(ev.target.dataset.detailsId);
         details.classList.add('displayed', 'maximized');
         var last = details.getBoundingClientRect();
         var first = ev.target.parentNode.getBoundingClientRect();
@@ -232,7 +238,8 @@
       for(var i = 0; i < detailsbtns.length; i++) {
         detailsbtns[i].addEventListener('click', showDetails);
       }
-      var closebtns = document.querySelectorAll('.status__completeness__details__close');
+
+      var closebtns = document.querySelectorAll('.details__close');
       for(var i = 0; i < closebtns.length; i++) {
         closebtns[i].addEventListener('click', hideDetails);
       }
@@ -241,12 +248,12 @@
         if (ev.key !== 'Escape') {
           return;
         }
-        var openDetails = document.querySelector('.status__completeness__details.visible');
+        var openDetails = document.querySelector('.details.visible');
         if (!openDetails) {
           return;
         }
 
-        openDetails.querySelector('.status__completeness__details__close').click();
+        openDetails.querySelector('.details__close').click();
       });
     })();
   </script>
