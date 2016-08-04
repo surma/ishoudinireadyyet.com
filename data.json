@@ -128,6 +128,7 @@
     "typedom": {
       "chrome": {
         "completeness": "partially",
+        "has_details": true,
         "since": "Canary"
       },
       "firefox": {
