@@ -1,6 +1,8 @@
 <!doctype html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>Is Houdini Ready Yet?</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
   <style>
@@ -20,7 +22,7 @@
     .title {
       text-align: center;
       font-size: 3em;
-      margin: 2em 0;
+      margin: 1em 0;
     }
     table {
       width: 100%;
@@ -30,6 +32,15 @@
       text-align: center;
       padding: 5px;
       vertical-align: center;
+    }
+    dl {
+      text-align: left;
+    }
+    dt {
+      font-weight: bold;
+    }
+    dd {
+      margin-bottom: 10px;
     }
     th a {
       text-decoration: none;
@@ -114,9 +125,10 @@
       display: flex;
       flex-direction: column;
       align-items: stretch;
+      justify-content: center;
     }
     .status__completeness__details > .status__completeness__details__content {
-      flex-grow: 1;
+      flex-grow: 0.2;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -203,8 +215,14 @@
                   (Canary)
                   <button class="status__completeness__detailsbutton">Details</button>
                   <div class="status__completeness__details">
+                    <h2 class="status__completeness__title">Painting API in Google Chrome</h2>
                     <div class="status__completeness__details__content">
-                      Behind the “Experimental Web Platform features” flag.
+                      <dl>
+  <dt>Flags</dt>
+  <dd>“Experimental Web Platform features” on <code>chrome://flags</code></dd>
+  <dt>Notes</dt>
+  <dd>Still under development</dd>
+</dl>
 
                     </div>
                     <button class="status__completeness__details__close">Close</button>
