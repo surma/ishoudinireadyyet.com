@@ -60,12 +60,10 @@
       opacity: 0.4;
       transition: opacity 0.3s ease-in-out;
       margin: 10px;
+      font-size: 1em;
     }
     .status__completeness button:hover {
       opacity: 0.8;
-    }
-    .status__completeness details {
-      display: none;
     }
     .status__completeness--none {
       background-color: hsl(0, 50%, 65%);
@@ -75,6 +73,46 @@
     }
     .status__completeness--full {
       background-color: hsl(75, 70%, 60%);
+    }
+    .status__completeness__details {
+      visibility: hidden;
+      opacity: 0;
+      position: fixed;
+      will-change: transform;
+      background-color: inherit;
+      transform-origin: 0% 0%;
+      z-index: 1;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.54);
+      border-radius: 3px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .status__completeness__details > .status__completeness__details__content {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .status__completeness__details__close {
+      height: 40px;
+    }
+    .status__completeness__details.displayed {
+      visibility: visible;
+    }
+    .status__completeness__details.visible {
+      opacity: 1;
+    }
+    .status__completeness__details.maximized {
+      top: 20px;
+      left: 20px;
+      right: 20px;
+      bottom: 20px;
+      border-color: transparent;
+    }
+    .status__completeness__details.animated {
+      transition: transform 0.3s ease-in-out;
     }
   </style>
 </head>
@@ -106,10 +144,13 @@
                 {{#if (lookup (lookup (lookup ../../status api.tag) browser.tag) "since")}}
                   ({{lookup (lookup (lookup ../../status api.tag) browser.tag) "since"}})
                 {{/if}}
-                  <button>Flags & Details</button>
-                  <details>
-                    {{read_partial api.tag browser.tag}}
-                  </details>
+                  <button class="status__completeness__detailsbutton">Flags & Details</button>
+                  <div class="status__completeness__details">
+                    <div class="status__completeness__details__content">
+                      {{{read_partial api.tag browser.tag}}}
+                    </div>
+                    <button class="status__completeness__details__close">Close</button>
+                  </div>
               </td>
             {{/with}}
           {{/each}}
@@ -118,5 +159,43 @@
     {{/each}}
     </tbody>
   </table>
+  <script>
+    function showDetails(ev) {
+      const details = ev.target.parentNode.querySelector('.status__completeness__details');
+      details.classList.add('displayed', 'maximized');
+      const last = details.getBoundingClientRect();
+      const first = ev.target.parentNode.getBoundingClientRect();
+      details.dataset.transform = details.style.transform = `
+        translate(${first.left - last.left}px, ${first.top - last.top}px)
+        scale(${first.width/last.width}, ${first.height/last.height})
+      `;
+      requestAnimationFrame(function() {
+        requestAnimationFrame(function() {
+          details.classList.add('visible', 'animated');
+          details.style.transform = 'none';
+        });
+      });
+    }
+
+    function hideDetails(ev) {
+      const details = ev.target.parentNode;
+      details.addEventListener('transitionend', function once() {
+        details.removeEventListener('transitionend', once);
+        details.classList.remove('visible', 'animated', 'displayed', 'maximized');
+        details.dataset.transform = details.style.transform = '';
+      });
+      details.style.transform = details.dataset.transform;
+    }
+
+    const detailsbtns = document.querySelectorAll('.status__completeness > .status__completeness__detailsbutton');
+    for(let i = 0; i < detailsbtns.length; i++) {
+      detailsbtns[i].addEventListener('click', showDetails);
+    }
+    const closebtns = document.querySelectorAll('.status__completeness__details__close');
+    for(let i = 0; i < closebtns.length; i++) {
+      closebtns[i].addEventListener('click', hideDetails);
+    }
+
+  </script>
 </body>
 </html>
