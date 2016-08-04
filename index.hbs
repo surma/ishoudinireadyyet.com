@@ -172,7 +172,7 @@
       {{#with . as |api|}}
         <tr class="status__api status__api--{{api.tag}}">
           <th>
-            <a href="{{api.spec}}" class="status__api__name">{{api.name}}</a>
+            <a href="{{api.spec}}" class="status__api__name" target="_blank" rel="noopener noreferrer">{{api.name}}</a>
           </th>
           {{#each ../browser}}
             {{#with . as |browser|}}
