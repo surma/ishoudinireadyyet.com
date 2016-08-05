@@ -57,7 +57,7 @@
   "status": {
     "layout": {
       "chrome": {
-        "completeness": "no"
+        "completeness": "intent"
       },
       "firefox": {
         "completeness": "no"
@@ -110,7 +110,7 @@
     },
     "propertiesandvalues": {
       "chrome": {
-        "completeness": "no"
+        "completeness": "development"
       },
       "firefox": {
         "completeness": "no"

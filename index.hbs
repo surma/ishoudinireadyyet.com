@@ -45,7 +45,6 @@ limitations under the License.
     td {
       text-align: center;
       padding: 10px;
-      vertical-align: center;
     }
     dl {
       text-align: left;
@@ -114,9 +113,18 @@ limitations under the License.
       height: 50px;
       margin: 10px auto;
     }
+    /* Color codings */
     .details--no,
     .status__completeness--no {
       background-color: hsl(0, 50%, 65%);
+    }
+    .details--intent,
+    .status__completeness--intent {
+      background-color: hsl(260, 50%, 65%);
+    }
+    .details--development,
+    .status__completeness--development {
+      background-color: hsl(28, 80%, 65%);
     }
     .details--partially,
     .status__completeness--partially {
@@ -126,8 +134,9 @@ limitations under the License.
     .status__completeness--yes {
       background-color: hsl(75, 70%, 60%);
     }
+
     .details {
-      visibility: hidden;
+      display: none;
       opacity: 0;
       position: fixed;
       will-change: transform;
@@ -137,7 +146,6 @@ limitations under the License.
       border-radius: 3px;
       padding: 30px;
 
-      display: flex;
       flex-direction: column;
       align-items: stretch;
       justify-content: center;
@@ -152,7 +160,7 @@ limitations under the License.
       height: 40px;
     }
     .details.displayed {
-      visibility: visible;
+      display: flex;
     }
     .details.visible {
       opacity: 1;
@@ -167,12 +175,10 @@ limitations under the License.
       transition: transform 0.3s ease-in-out;
     }
     footer {
-      position: absolute;
-      left: 0;
-      bottom: 0;
       width: 100%;
       text-align: center;
       color: rgba(0, 0, 0, 0.54) !important;
+      margin-top: 30px;
     }
     footer a {
       display: inline !important;
