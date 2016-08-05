@@ -29,8 +29,12 @@ limitations under the License.
     }
     body {
       font-family: 'Roboto Condensed', sans-serif;
-      max-width: 720px;
-      margin: 0 auto;
+    }
+    @media (min-width: 720px) {
+      body {
+        max-width: 720px;
+        margin: 0 auto;
+      }
     }
     .title {
       text-align: center;
@@ -149,6 +153,7 @@ limitations under the License.
       flex-direction: column;
       align-items: stretch;
       justify-content: center;
+      -webkit-backface-visibility: hidden;
     }
     .details > .details__content {
       flex-grow: 0.2;
@@ -179,6 +184,7 @@ limitations under the License.
       text-align: center;
       color: rgba(0, 0, 0, 0.54) !important;
       margin-top: 30px;
+      padding: 10px;
     }
     footer a {
       display: inline !important;
