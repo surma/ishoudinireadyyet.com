@@ -29,6 +29,7 @@ const htmlminOpts = {
 
 const fs = require('fs');
 const data = require('./data.json');
+data.last_update = new Date().toString();
 data.browser.sort((a, b) => a.name > b.name);
 const rawTpl = fs.readFileSync('index.hbs', 'utf-8');
 const tpl = Handlebars.compile(rawTpl);
