@@ -112,7 +112,8 @@
         "completeness": "development"
       },
       "firefox": {
-        "completeness": "no"
+        "completeness": "development",
+        "has_details": true
       },
       "safari": {
         "completeness": "no"
