@@ -165,13 +165,14 @@ limitations under the License.
       padding: 30px;
 
       flex-direction: column;
-      align-items: stretch;
+      align-items: center;
       justify-content: center;
-      -webkit-backface-visibility: hidden;
     }
     .details > .details__content {
-      flex-grow: 0.2;
+      max-width: 720px;
+      margin: 0 auto;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
     }
@@ -249,11 +250,11 @@ limitations under the License.
       {{#each ../browser}}
         {{#with . as |browser|}}
           <div id="{{api.tag}}_{{browser.tag}}" class="details details--{{lookup (lookup (lookup ../../status api.tag) browser.tag) "completeness"}}" data-browser="{{browser.tag}}" data-api="{{api.tag}}">
-            <h2 class="details__title">{{api.name}} in {{browser.name}}</h2>
             <div class="details__content">
+              <h2 class="details__title">{{api.name}} in {{browser.name}}</h2>
               {{{read_partial api.tag browser.tag}}}
+              <button class="details__close">Close</button>
             </div>
-            <button class="details__close">Close</button>
           </div>
         {{/with}}
       {{/each}}
@@ -296,7 +297,7 @@ limitations under the License.
       }
 
       function hideDetails(ev) {
-        var details = ev.target.parentNode;
+        var details = ev.target.parentNode.parentNode;
         details.addEventListener('transitionend', function once() {
           details.removeEventListener('transitionend', once);
           details.classList.remove('visible', 'animated', 'displayed', 'maximized');
