@@ -56,7 +56,8 @@
   "status": {
     "layout": {
       "chrome": {
-        "completeness": "intent"
+        "completeness": "intent",
+        "has_details": true
       },
       "firefox": {
         "completeness": "no"
