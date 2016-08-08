@@ -73,27 +73,18 @@ limitations under the License.
     dd {
       margin-bottom: 10px;
     }
-    footer a,
-    th a {
+    .status__api__links,
+    .status__api__links a {
       text-decoration: none;
-      color: black;
-      display: flex;
-      align-items: center;
+      color: rgba(0,0,0,0.54);
+      font-weight: 300;
+    }
+    th a:not(:first-of-type) {
+      margin-left: 5px;
     }
     footer a:hover,
     th a:hover {
       text-decoration: underline;
-    }
-    th a:before {
-      content: '';
-      background-image: url('images/link.svg');
-      background-size: contain;
-      background-repeat: no-repeat;
-      width: 1em;
-      height: 1em;
-      display: inline-block;
-      margin-right: 3px;
-      flex-shrink: 0;
     }
     button {
       display: block;
@@ -202,7 +193,8 @@ limitations under the License.
       padding: 10px;
     }
     footer a {
-      display: inline !important;
+      color: black;
+      text-decoration: none;
     }
   </style>
 </head>
@@ -225,7 +217,14 @@ limitations under the License.
       {{#with . as |api|}}
         <tr class="status__api status__api--{{api.tag}}">
           <th>
-            <a href="{{api.spec}}" class="status__api__name" target="_blank" rel="noopener noreferrer">{{api.name}}</a>
+            {{api.name}}
+            <div class="status__api__links">
+              (<!--
+                -->{{#if api.spec}}<a href="{{api.spec}}" class="status__api__spec" target="_blank" rel="noopener noreferrer">Spec</a>{{/if}}<!--
+                -->{{#if api.explainer}}<a href="{{api.explainer}}" class="status__api__explainer" target="_blank" rel="noopener noreferrer">Explainer</a>{{/if}}<!--
+                -->{{#if api.demos}}<a href="{{api.demos}}" class="status__api__demos" target="_blank" rel="noopener noreferrer">Demos</a>{{/if}}<!--
+              -->)
+            </div>
           </th>
           {{#each ../browser}}
             {{#with . as |browser|}}

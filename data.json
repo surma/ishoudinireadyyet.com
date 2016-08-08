@@ -25,22 +25,31 @@
     {
       "tag": "layout",
       "name": "Layout API",
-      "spec": "https://drafts.css-houdini.org/css-layout-api/"
+      "spec": "https://drafts.css-houdini.org/css-layout-api/",
+      "explainer": "https://github.com/w3c/css-houdini-drafts/blob/master/css-layout-api/README.md"
     },
     {
       "tag": "painting",
       "name": "Painting API",
-      "spec": "https://drafts.css-houdini.org/css-paint-api/"
+      "spec": "https://drafts.css-houdini.org/css-paint-api/",
+      "demos": "https://github.com/GoogleChrome/houdini-samples/tree/master/paint-worklet"
     },
     {
       "tag": "parser",
       "name": "Parser API",
-      "spec": "https://drafts.css-houdini.org/css-parser-api/"
+      "spec": "https://drafts.css-houdini.org/css-parser-api/",
+      "explainer": "https://github.com/WICG/CSS-Parser-API/blob/master/README.md"
     },
     {
       "tag": "propertiesandvalues",
       "name": "Properties & Values API",
       "spec": "https://drafts.css-houdini.org/css-properties-values-api/"
+    },
+    {
+      "tag": "compositor",
+      "name": "Composited scrolling and animations",
+      "explainer": "https://github.com/w3c/css-houdini-drafts/blob/master/composited-scrolling-and-animation/Explainer.md",
+      "demos": "https://github.com/GoogleChrome/houdini-samples/tree/master/compositor-worklet"
     },
     {
       "tag": "typedom",
@@ -58,18 +67,6 @@
       "chrome": {
         "completeness": "intent",
         "has_details": true
-      },
-      "firefox": {
-        "completeness": "no"
-      },
-      "safari": {
-        "completeness": "no"
-      },
-      "opera": {
-        "completeness": "no"
-      },
-      "edge": {
-        "completeness": "no"
       }
     },
     "painting": {
@@ -77,36 +74,9 @@
         "completeness": "partially",
         "has_details": true,
         "since": "Canary"
-      },
-      "firefox": {
-        "completeness": "no"
-      },
-      "safari": {
-        "completeness": "no"
-      },
-      "opera": {
-        "completeness": "no"
-      },
-      "edge": {
-        "completeness": "no"
       }
     },
     "parser": {
-      "chrome": {
-        "completeness": "no"
-      },
-      "firefox": {
-        "completeness": "no"
-      },
-      "safari": {
-        "completeness": "no"
-      },
-      "opera": {
-        "completeness": "no"
-      },
-      "edge": {
-        "completeness": "no"
-      }
     },
     "propertiesandvalues": {
       "chrome": {
@@ -115,15 +85,6 @@
       "firefox": {
         "completeness": "development",
         "has_details": true
-      },
-      "safari": {
-        "completeness": "no"
-      },
-      "opera": {
-        "completeness": "no"
-      },
-      "edge": {
-        "completeness": "no"
       }
     },
     "typedom": {
@@ -135,33 +96,10 @@
       "firefox": {
         "completeness": "development",
         "has_details": true
-      },
-      "safari": {
-        "completeness": "no"
-      },
-      "opera": {
-        "completeness": "no"
-      },
-      "edge": {
-        "completeness": "no"
       }
     },
+    "compositor": {},
     "fontmetrics": {
-      "chrome": {
-        "completeness": "no"
-      },
-      "firefox": {
-        "completeness": "no"
-      },
-      "safari": {
-        "completeness": "no"
-      },
-      "opera": {
-        "completeness": "no"
-      },
-      "edge": {
-        "completeness": "no"
-      }
     }
   }
 }

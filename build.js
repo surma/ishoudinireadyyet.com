@@ -31,6 +31,11 @@ const fs = require('fs');
 const data = require('./data.json');
 data.last_update = new Date().toString();
 data.browser.sort((a, b) => a.name > b.name);
+data.api.forEach(api =>
+  data.browser.forEach(browser =>
+    data.status[api.tag][browser.tag] = data.status[api.tag][browser.tag] || {completeness: "no"}
+  )
+);
 const rawTpl = fs.readFileSync('index.hbs', 'utf-8');
 const tpl = Handlebars.compile(rawTpl);
 fs.writeFileSync('index.html', htmlmin(tpl(data), htmlminOpts), 'utf-8');
