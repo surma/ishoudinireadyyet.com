@@ -98,7 +98,12 @@
         "has_details": true
       }
     },
-    "compositor": {},
+    "compositor": {
+      "chrome": {
+        "completeness": "development",
+        "has_details": true
+      }
+    },
     "fontmetrics": {
     }
   }
