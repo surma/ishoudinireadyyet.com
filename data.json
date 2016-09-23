@@ -46,10 +46,9 @@
       "spec": "https://drafts.css-houdini.org/css-properties-values-api/"
     },
     {
-      "tag": "compositor",
-      "name": "Composited scrolling and animations",
-      "explainer": "https://github.com/w3c/css-houdini-drafts/blob/master/composited-scrolling-and-animation/Explainer.md",
-      "demos": "https://github.com/GoogleChrome/houdini-samples/tree/master/compositor-worklet"
+      "tag": "animation",
+      "name": "AnimationWorklet",
+      "explainer": "https://discourse.wicg.io/t/proposal-animationworklet-a-primitive-for-scroll-linked-and-high-performance-procedural-animated-effects/1710"
     },
     {
       "tag": "typedom",
@@ -98,9 +97,9 @@
         "has_details": true
       }
     },
-    "compositor": {
+    "animation": {
       "chrome": {
-        "completeness": "development",
+        "completeness": "intent",
         "has_details": true
       }
     },
