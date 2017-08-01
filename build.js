@@ -33,7 +33,7 @@ data.last_update = new Date().toString();
 data.browser.sort((a, b) => a.name > b.name);
 data.api.forEach(api =>
   data.browser.forEach(browser =>
-    data.status[api.tag][browser.tag] = data.status[api.tag][browser.tag] || {completeness: "no"}
+    data.status[api.tag][browser.tag] = data.status[api.tag][browser.tag] || {completeness: "no signal"}
   )
 );
 const rawTpl = fs.readFileSync('index.hbs', 'utf-8');
