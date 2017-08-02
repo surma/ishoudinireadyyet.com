@@ -91,7 +91,7 @@
         "since": "Canary"
       },
       "firefox": {
-        "completeness": "intent",
+        "completeness": "development",
         "has_details": true
       }
     },
