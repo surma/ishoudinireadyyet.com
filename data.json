@@ -81,7 +81,8 @@
       },
       "firefox": {
         "completeness": "development",
-        "has_details": true
+        "has_details": true,
+        "since": "Servo"
       }
     },
     "parser": {
