@@ -67,10 +67,6 @@
       "chrome": {
         "completeness": "intent",
         "has_details": true
-      },
-      "firefox": {
-        "completeness": "intent",
-        "has_details": true
       }
     },
     "painting": {
@@ -80,7 +76,7 @@
         "since": "Canary"
       },
       "firefox": {
-        "completeness": "development",
+        "completeness": "intent",
         "has_details": true,
         "since": "Servo"
       }
@@ -95,7 +91,7 @@
         "since": "Canary"
       },
       "firefox": {
-        "completeness": "development",
+        "completeness": "intent",
         "has_details": true
       }
     },
@@ -106,7 +102,7 @@
         "since": "Canary"
       },
       "firefox": {
-        "completeness": "development",
+        "completeness": "intent",
         "has_details": true
       },
       "safari": {
