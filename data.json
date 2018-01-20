@@ -30,9 +30,10 @@
     },
     {
       "tag": "painting",
-      "name": "Custom Paint API",
+      "name": "Paint API",
       "spec": "https://drafts.css-houdini.org/css-paint-api/",
-      "demos": "https://github.com/GoogleChrome/houdini-samples/tree/master/paint-worklet"
+      "demos": "https://github.com/GoogleChrome/houdini-samples/tree/master/paint-worklet",
+      "article": "https://developers.google.com/web/updates/2018/01/paintapi"
     },
     {
       "tag": "parser",
@@ -71,9 +72,9 @@
     },
     "painting": {
       "chrome": {
-        "completeness": "partially",
+        "completeness": "yes",
         "has_details": true,
-        "since": "Canary"
+        "since": "Chrome 65"
       },
       "firefox": {
         "completeness": "intent",
