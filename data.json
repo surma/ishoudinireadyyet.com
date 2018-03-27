@@ -55,7 +55,8 @@
     {
       "tag": "typedom",
       "name": "Typed OM",
-      "spec": "https://drafts.css-houdini.org/css-typed-om/"
+      "spec": "https://drafts.css-houdini.org/css-typed-om/",
+      "article": "https://developers.google.com/web/updates/2018/03/cssom"
     },
     {
       "tag": "fontmetrics",
@@ -98,9 +99,9 @@
     },
     "typedom": {
       "chrome": {
-        "completeness": "partially",
+        "completeness": "yes",
         "has_details": true,
-        "since": "Canary"
+        "since": "Chrome 66"
       },
       "firefox": {
         "completeness": "intent",
@@ -113,8 +114,9 @@
     },
     "animation": {
       "chrome": {
-        "completeness": "intent",
-        "has_details": true
+        "completeness": "partially",
+        "has_details": true,
+        "since": "Canary"
       }
     },
     "fontmetrics": {
