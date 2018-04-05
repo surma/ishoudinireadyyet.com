@@ -67,7 +67,8 @@
   "status": {
     "layout": {
       "chrome": {
-        "completeness": "intent",
+        "completeness": "partially",
+        "since": "Canary",
         "has_details": true
       }
     },
