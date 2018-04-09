@@ -78,6 +78,11 @@
         "has_details": true,
         "since": "Chrome 65"
       },
+      "opera": {
+        "completeness": "yes",
+        "has_details": true,
+        "since": "Opera 52"
+      },
       "firefox": {
         "completeness": "intent",
         "has_details": true,

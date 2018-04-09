@@ -235,7 +235,7 @@ limitations under the License.
               <td class="status__browser--{{tag}} status__completeness status__completeness--{{lookup (lookup (lookup ../../status api.tag) browser.tag) "completeness"}}">
                 {{lookup (lookup (lookup ../../status api.tag) browser.tag) "completeness"}}
                 {{#if (lookup (lookup (lookup ../../status api.tag) browser.tag) "since")}}
-                  ({{lookup (lookup (lookup ../../status api.tag) browser.tag) "since"}})
+                  <br>({{lookup (lookup (lookup ../../status api.tag) browser.tag) "since"}})
                 {{/if}}
                 {{#if (lookup (lookup (lookup ../../status api.tag) browser.tag) "has_details")}}
                   <button class="status__completeness__detailsbutton" data-details-id="{{api.tag}}_{{browser.tag}}" data-browser="{{browser.tag}}" data-api="{{api.tag}}">Details</button>
