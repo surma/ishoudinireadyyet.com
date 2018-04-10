@@ -87,7 +87,7 @@ limitations under the License.
     th a:hover {
       text-decoration: underline;
     }
-    button {
+    .button {
       display: block;
       border: 0;
       border-radius: 3px;
@@ -98,8 +98,9 @@ limitations under the License.
       padding: 10px;
       font-size: 1em;
       width: 100%;
+      text-decoration: none;
     }
-    button:hover {
+    .button:hover {
       opacity: 0.8;
     }
     /* Rounded corners for status table */
@@ -255,7 +256,6 @@ limitations under the License.
             {{api.name}}
             <div class="status__api__links">
               (<!--
-                -->{{#if api.spec}}<a href="{{api.spec}}" class="status__api__spec" rel="noopener noreferrer">Spec</a>{{/if}}<!--
                 -->{{#if api.explainer}}<a href="{{api.explainer}}" class="status__api__explainer" rel="noopener noreferrer">Explainer</a>{{/if}}<!--
                 -->{{#if api.demos}}<a href="{{api.demos}}" class="status__api__demos" rel="noopener noreferrer">Demos</a>{{/if}}<!--
                 -->{{#if api.article}}<a href="{{api.article}}" class="status__api__article" rel="noopener noreferrer">Article</a>{{/if}}<!--
@@ -270,12 +270,15 @@ limitations under the License.
                   <br>({{lookup (lookup (lookup ../../status api.tag) browser.tag) "since"}})
                 {{/if}}
                 {{#if (lookup (lookup (lookup ../../status api.tag) browser.tag) "has_details")}}
-                  <button class="status__completeness__detailsbutton" data-details-id="{{api.tag}}_{{browser.tag}}" data-browser="{{browser.tag}}" data-api="{{api.tag}}">Details</button>
+                  <button class="button status__completeness__detailsbutton" data-details-id="{{api.tag}}_{{browser.tag}}" data-browser="{{browser.tag}}" data-api="{{api.tag}}">Details</button>
                 {{/if}}
               </td>
             {{/with}}
           {{/each}}
           <td class="status__browser--spec status__completeness status__completeness--{{status}}">
+            {{#if spec}}
+              <br><a class="button status__completeness__detailsbutton" href="{{spec}}" target="_blank" rel="noopener">Spec</a>
+            {{/if}}
           </td>
         </tr>
       {{/with}}
@@ -290,7 +293,7 @@ limitations under the License.
             <div class="details__content">
               <h2 class="details__title">{{api.name}} in {{browser.name}}</h2>
               {{{read_partial api.tag browser.tag}}}
-              <button class="details__close">Close</button>
+              <button class="details__close button">Close</button>
             </div>
           </div>
         {{/with}}

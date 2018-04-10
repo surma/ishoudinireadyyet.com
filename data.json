@@ -47,7 +47,7 @@
       "tag": "propertiesandvalues",
       "name": "Properties & Values API",
       "spec": "https://drafts.css-houdini.org/css-properties-values-api/",
-      "status": "fpwd"
+      "status": "wd"
     },
     {
       "tag": "animation",
