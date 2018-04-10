@@ -44,11 +44,9 @@ limitations under the License.
     body {
       font-family: 'Roboto Condensed', sans-serif;
     }
-    @media (min-width: 720px) {
-      body {
-        max-width: 720px;
-        margin: 0 auto;
-      }
+    body {
+      max-width: 1280px;
+      margin: 0 auto;
     }
     .title {
       text-align: center;
@@ -146,6 +144,36 @@ limitations under the License.
     .status__completeness--yes {
       background-color: hsl(95, 60%, 60%);
     }
+    .status__browser--spec.status__completeness--none {
+      background-color: hsl(0, 50%, 65%);
+    }
+    .status__browser--spec.status__completeness--none::before {
+      content: 'None';
+    }
+    .status__browser--spec.status__completeness--ed {
+      background-color: hsl(260, 50%, 65%);
+    }
+    .status__browser--spec.status__completeness--ed::before {
+      content: 'Editor’s Draft';
+    }
+    .status__browser--spec.status__completeness--fpwd {
+      background-color: hsl(28, 80%, 65%);
+    }
+    .status__browser--spec.status__completeness--fpwd::before {
+      content: 'First Public Working Draft';
+    }
+    .status__browser--spec.status__completeness--wd {
+      background-color:  hsl(50, 70%, 60%);
+    }
+    .status__browser--spec.status__completeness--wd::before {
+      content: 'Working Draft';
+    }
+    .status__browser--spec.status__completeness--cr {
+      background-color: hsl(95, 60%, 60%);
+    }
+    .status__browser--spec.status__completeness--cr::before {
+      content: 'Candidate Recommendation';
+    }
 
     .details {
       display: none;
@@ -213,6 +241,10 @@ limitations under the License.
             {{name}}
           </td>
         {{/each}}
+        <td class="status__browser status__browser--spec">
+          <img src="logos/w3c.svg">
+          Spec
+        </td>
       </tr>
     </thead>
     <tbody>
@@ -243,6 +275,8 @@ limitations under the License.
               </td>
             {{/with}}
           {{/each}}
+          <td class="status__browser--spec status__completeness status__completeness--{{status}}">
+          </td>
         </tr>
       {{/with}}
     {{/each}}
