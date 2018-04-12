@@ -27,7 +27,7 @@
       "name": "Layout API",
       "spec": "https://drafts.css-houdini.org/css-layout-api/",
       "explainer": "https://github.com/w3c/css-houdini-drafts/blob/master/css-layout-api/README.md",
-      "status": "ed"
+      "status": "fpwd"
     },
     {
       "tag": "painting",
