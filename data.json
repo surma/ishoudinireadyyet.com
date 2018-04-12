@@ -47,6 +47,7 @@
       "tag": "propertiesandvalues",
       "name": "Properties & Values API",
       "spec": "https://drafts.css-houdini.org/css-properties-values-api/",
+      "demos": "https://github.com/GoogleChromeLabs/houdini-samples/tree/master/properties-and-values/",
       "status": "wd"
     },
     {
@@ -62,6 +63,7 @@
       "name": "Typed OM",
       "spec": "https://drafts.css-houdini.org/css-typed-om/",
       "article": "https://developers.google.com/web/updates/2018/03/cssom",
+      "explainer": "https://github.com/w3c/css-houdini-drafts/blob/master/css-typed-om/README.md",
       "status": "wd"
     },
     {
