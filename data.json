@@ -32,10 +32,10 @@
     {
       "tag": "painting",
       "name": "Paint API",
-      "spec": "https://drafts.css-houdini.org/css-paint-api/",
+      "spec": "https://www.w3.org/TR/2018/CR-css-paint-api-1-20180809/",
       "demos": "https://github.com/GoogleChrome/houdini-samples/tree/master/paint-worklet",
       "article": "https://developers.google.com/web/updates/2018/01/paintapi",
-      "status": "wd"
+      "status": "cr"
     },
     {
       "tag": "parser",
