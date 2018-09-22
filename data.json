@@ -96,6 +96,10 @@
         "completeness": "intent",
         "has_details": true,
         "since": "Servo"
+      },
+      "safari": {
+        "completeness": "consideration",
+        "has_details": true
       }
     },
     "parser": {
@@ -108,6 +112,10 @@
         "since": "Canary"
       },
       "firefox": {
+        "completeness": "development",
+        "has_details": true
+      },
+      "safari": {
         "completeness": "development",
         "has_details": true
       }
