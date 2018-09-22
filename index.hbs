@@ -129,31 +129,47 @@ limitations under the License.
     .status__completeness--no {
       background-color: hsl(0, 50%, 65%);
     }
-    .details--consideration,
-    .status__completeness--consideration {
-      background-color: hsl(260, 50%, 65%);
+    .status__completeness--no::before {
+      content: 'No signal';
     }
+    .details--consideration,
+    .status__completeness--consideration,
     .details--intent,
     .status__completeness--intent {
       background-color: hsl(260, 50%, 65%);
+    }
+    .status__completeness--consideration::before {
+      content: 'Under consideration';
+    }
+    .status__completeness--intent::before {
+      content: 'Intent to implement';
     }
     .details--development,
     .status__completeness--development {
       background-color: hsl(28, 80%, 65%);
     }
+    .status__completeness--development::before {
+      content: 'In Development';
+    }
     .details--partially,
     .status__completeness--partially {
       background-color: hsl(50, 70%, 60%);
+    }
+    .status__completeness--partially::before {
+      content: 'Partial support';
     }
     .details--yes,
     .status__completeness--yes {
       background-color: hsl(95, 60%, 60%);
     }
+    .status__completeness--yes::before {
+      content: 'Shipped';
+    }
     .status__browser--spec.status__completeness--none {
       background-color: hsl(0, 50%, 65%);
     }
     .status__browser--spec.status__completeness--none::before {
-      content: 'None';
+      content: 'No spec';
     }
     .status__browser--spec.status__completeness--ed {
       background-color: hsl(260, 50%, 65%);
@@ -273,7 +289,6 @@ limitations under the License.
           {{#each ../browser}}
             {{#with . as |browser|}}
               <td class="status__browser--{{tag}} status__completeness status__completeness--{{lookup (lookup (lookup ../../status api.tag) browser.tag) "completeness"}}">
-                {{lookup (lookup (lookup ../../status api.tag) browser.tag) "completeness"}}
                 {{#if (lookup (lookup (lookup ../../status api.tag) browser.tag) "since")}}
                   <br>({{lookup (lookup (lookup ../../status api.tag) browser.tag) "since"}})
                 {{/if}}
