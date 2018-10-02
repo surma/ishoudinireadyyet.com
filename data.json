@@ -79,6 +79,10 @@
         "completeness": "partially",
         "since": "Canary",
         "has_details": true
+      },
+      "firefox": {
+        "completeness": "intent",
+        "has_details": true
       }
     },
     "painting": {
