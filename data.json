@@ -17,6 +17,10 @@
       "name": "Microsoft Edge"
     },
     {
+      "tag": "samsung",
+      "name": "Samsung Internet"
+    },
+    {
       "tag": "safari",
       "name": "Apple Safari"
     }
@@ -104,6 +108,9 @@
       "safari": {
         "completeness": "consideration",
         "has_details": true
+      },
+      "samsung": {
+        "completeness": "intent"
       }
     },
     "parser": {
@@ -136,6 +143,14 @@
       },
       "safari": {
         "completeness": "intent",
+        "has_details": true
+      },
+      "samsung": {
+        "completeness": "intent"
+      },
+      "opera": {
+        "completeness": "yes",
+        "since": "Opera 53",
         "has_details": true
       }
     },
