@@ -128,8 +128,9 @@
         "has_details": true
       },
       "safari": {
-        "completeness": "development",
-        "has_details": true
+        "completeness": "partially",
+        "has_details": true,
+        "since":  "Safari TP 67"
       }
     },
     "typedom": {
