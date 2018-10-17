@@ -107,7 +107,7 @@
         "since": "Servo"
       },
       "safari": {
-        "completeness": "consideration",
+        "completeness": "development",
         "has_details": true
       },
       "samsung": {
