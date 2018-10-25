@@ -62,7 +62,7 @@
       "spec": "https://wicg.github.io/animation-worklet/",
       "demos": "https://github.com/GoogleChrome/houdini-samples/tree/master/animation-worklet",
       "article": "https://developers.google.com/web/updates/2018/10/animation-worklet",
-      "status": "ed"
+      "status": "fpwd"
     },
     {
       "tag": "typedom",
