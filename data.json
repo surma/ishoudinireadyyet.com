@@ -30,6 +30,7 @@
       "tag": "layout",
       "name": "Layout API",
       "spec": "https://drafts.css-houdini.org/css-layout-api/",
+      "demos": "https://github.com/GoogleChromeLabs/houdini-samples/tree/master/layout-worklet",
       "explainer": "https://github.com/w3c/css-houdini-drafts/blob/master/css-layout-api/EXPLAINER.md",
       "status": "fpwd"
     },
