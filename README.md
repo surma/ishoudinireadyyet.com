@@ -5,7 +5,7 @@
 Running
 
 ```
-$ node build.js
+$ npm run build
 ```
 
 will build `index.html`. Commit that file to master and update `gh-pages` branch to the same commit. By pushing to the repository, the live version of the website is updated.
