@@ -39,7 +39,7 @@
       "name": "Paint API",
       "spec": "https://drafts.css-houdini.org/css-paint-api/",
       "demos": "https://github.com/GoogleChrome/houdini-samples/tree/master/paint-worklet",
-      "explainer": "https://github.com/w3c/css-houdini-drafts/blob/master/css-layout-api/EXPLAINER.md",
+      "explainer": "https://github.com/w3c/css-houdini-drafts/blob/master/css-paint-api/EXPLAINER.md",
       "article": "https://developers.google.com/web/updates/2018/01/paintapi",
       "status": "cr"
     },
