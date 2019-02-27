@@ -109,7 +109,8 @@
         "since": "Servo"
       },
       "safari": {
-        "completeness": "development",
+        "completeness": "partially",
+        "since": "Safari TP 68",
         "has_details": true
       },
       "samsung": {
@@ -132,7 +133,7 @@
       "safari": {
         "completeness": "partially",
         "has_details": true,
-        "since":  "Safari TP 67"
+        "since": "Safari TP 67"
       }
     },
     "typedom": {
@@ -146,7 +147,7 @@
         "has_details": true
       },
       "safari": {
-        "completeness": "development",
+        "completeness": "partially",
         "has_details": true
       },
       "samsung": {
