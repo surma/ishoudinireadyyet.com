@@ -113,7 +113,9 @@
         "has_details": true
       },
       "samsung": {
-        "completeness": "intent"
+        "completeness": "yes",
+        "has_details": true,
+        "since": "Internet 9.2"
       }
     },
     "parser": {
@@ -150,7 +152,9 @@
         "has_details": true
       },
       "samsung": {
-        "completeness": "intent"
+        "completeness": "yes",
+        "has_details": true,
+        "since": "Internet 9.2"
       },
       "opera": {
         "completeness": "yes",
