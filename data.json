@@ -136,7 +136,8 @@
         "has_details": true
       },
       "safari": {
-        "completeness": "development",
+        "completeness": "partially",
+        "since": "Safari TP 68",
         "has_details": true
       },
       "samsung": {
