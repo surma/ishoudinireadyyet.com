@@ -10,5 +10,13 @@
   },
   "scripts": {
     "build": "node build.js"
+  },
+  "devDependencies": {
+    "@browser-logos/chrome": "^1.0.11",
+    "@browser-logos/edge": "^1.0.5",
+    "@browser-logos/firefox": "^2.0.5",
+    "@browser-logos/opera": "^1.1.5",
+    "@browser-logos/safari-ios": "^1.0.7",
+    "@browser-logos/samsung-internet": "^4.0.0"
   }
 }
