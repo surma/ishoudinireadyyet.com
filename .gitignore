@@ -2,9 +2,3 @@ node_modules
 *.pem
 .vscode
 
-logos/chrome.svg
-logos/edge.svg
-logos/firefox.svg
-logos/opera.svg
-logos/safari.svg
-logos/samsung.svg
