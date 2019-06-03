@@ -40,3 +40,18 @@ const rawTpl = fs.readFileSync('index.hbs', 'utf-8');
 const tpl = Handlebars.compile(rawTpl);
 fs.writeFileSync('index.html', htmlmin(tpl(data), htmlminOpts), 'utf-8');
 
+const fsp = require('fs').promises;
+const copyBrowserLogos = async () => {
+    try {
+        await fsp.copyFile('node_modules/@browser-logos/chrome/chrome.svg', 'logos/chrome.svg');
+        await fsp.copyFile('node_modules/@browser-logos/edge/edge.svg', 'logos/edge.svg');
+        await fsp.copyFile('node_modules/@browser-logos/firefox/firefox.svg', 'logos/firefox.svg');
+        await fsp.copyFile('node_modules/@browser-logos/opera/opera.svg', 'logos/opera.svg');
+        await fsp.copyFile('node_modules/@browser-logos/safari-ios/safari-ios.svg', 'logos/safari.svg');
+        await fsp.copyFile('node_modules/@browser-logos/samsung-internet/samsung-internet.svg', 'logos/samsung.svg');
+    } catch (e) {
+        console.log(e.message);
+        process.exit(1);
+    }
+};
+copyBrowserLogos();
