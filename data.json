@@ -54,6 +54,7 @@
       "name": "Properties & Values API",
       "spec": "https://drafts.css-houdini.org/css-properties-values-api/",
       "demos": "https://github.com/GoogleChromeLabs/houdini-samples/tree/master/properties-and-values/",
+      "article": "https://web.dev/css-props-and-vals/",
       "status": "wd"
     },
     {
