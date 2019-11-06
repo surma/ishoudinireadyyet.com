@@ -124,9 +124,9 @@
     },
     "propertiesandvalues": {
       "chrome": {
-        "completeness": "partially",
+        "completeness": "yes",
         "has_details": "true",
-        "since": "Canary"
+        "since": "Chrome 78"
       },
       "firefox": {
         "completeness": "development",
