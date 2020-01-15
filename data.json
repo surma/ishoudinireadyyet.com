@@ -88,6 +88,11 @@
         "since": "Canary",
         "has_details": true
       },
+      "edge": {
+        "completeness": "partially",
+        "since": "Canary",
+        "has_details": true
+      },
       "firefox": {
         "completeness": "intent",
         "has_details": true
@@ -98,6 +103,11 @@
         "completeness": "yes",
         "has_details": true,
         "since": "Chrome 65"
+      },
+      "edge": {
+        "completeness": "yes",
+        "has_details": true,
+        "since": "Edge 79"
       },
       "opera": {
         "completeness": "yes",
@@ -128,6 +138,11 @@
         "has_details": "true",
         "since": "Chrome 78"
       },
+      "edge": {
+        "completeness": "yes",
+        "has_details": "true",
+        "since": "Edge 79"
+      },
       "firefox": {
         "completeness": "development",
         "has_details": true
@@ -143,6 +158,11 @@
         "completeness": "yes",
         "has_details": true,
         "since": "Chrome 66"
+      },
+      "edge": {
+        "completeness": "yes",
+        "has_details": true,
+        "since": "Edge 79"
       },
       "firefox": {
         "completeness": "intent",
@@ -167,6 +187,10 @@
       "chrome": {
         "completeness": "partially",
         "has_details": true,
+        "since": "Canary"
+      },
+      "edge": {
+        "completeness": "partially",
         "since": "Canary"
       }
     },
