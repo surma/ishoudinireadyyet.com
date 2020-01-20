@@ -99,6 +99,11 @@
         "since": "Canary",
         "has_details": true
       },
+      "opera": {
+        "completeness": "partially",
+        "since": "Canary",
+        "has_details": true
+      },
       "firefox": {
         "completeness": "intent",
         "has_details": true
@@ -149,6 +154,11 @@
         "has_details": "true",
         "since": "Edge 79"
       },
+      "opera": {
+        "completeness": "yes",
+        "has_details": "true",
+        "since": "Opera 65"
+      },
       "firefox": {
         "completeness": "development",
         "has_details": true
@@ -193,11 +203,15 @@
       "chrome": {
         "completeness": "partially",
         "has_details": true,
-        "since": "Canary"
+        "since": "Chrome 71"
       },
       "edge": {
         "completeness": "partially",
-        "since": "Canary"
+        "since": "Edge 79"
+      },
+      "opera": {
+        "completeness": "partially",
+        "since": "Opera 58"
       }
     },
     "fontmetrics": {
