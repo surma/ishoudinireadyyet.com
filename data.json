@@ -2,27 +2,33 @@
   "browser": [
     {
       "tag": "chrome",
-      "name": "Google Chrome"
+      "name": "Google Chrome",
+      "renderingEngine": "Blink"
     },
     {
       "tag": "firefox",
-      "name": "Mozilla Firefox"
+      "name": "Mozilla Firefox",
+      "renderingEngine": "Gecko"
     },
     {
       "tag": "opera",
-      "name": "Opera"
+      "name": "Opera",
+      "renderingEngine": "Blink"
     },
     {
       "tag": "edge",
-      "name": "Microsoft Edge"
+      "name": "Microsoft Edge",
+      "renderingEngine": "Blink"
     },
     {
       "tag": "samsung",
-      "name": "Samsung Internet"
+      "name": "Samsung Internet",
+      "renderingEngine": "Blink"
     },
     {
       "tag": "safari",
-      "name": "Apple Safari"
+      "name": "Apple Safari",
+      "renderingEngine": "WebKit"
     }
   ],
   "api": [

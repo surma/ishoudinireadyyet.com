@@ -125,6 +125,9 @@ limitations under the License.
       margin: 10px auto;
     }
     /* Color codings */
+    .status__engine {
+      background-color: hsl(0, 0, 65%);
+    }
     .details--no,
     .status__completeness--no {
       background-color: hsl(0, 50%, 65%);
@@ -270,6 +273,15 @@ limitations under the License.
           <img src="logos/w3c.svg">
           Spec
         </td>
+      </tr>
+      <tr>
+        <th>Engine</th>
+        {{#each engines}}
+          <td colspan="{{this}}" class="status__engine">
+            {{@key}}
+          </td>
+        {{/each}}
+        <td class="status__engine">-</td>
       </tr>
     </thead>
     <tbody>
