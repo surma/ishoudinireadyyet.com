@@ -30,7 +30,9 @@ const htmlminOpts = {
 const fs = require('fs');
 const data = require('./data.json');
 data.last_update = new Date().toString();
-data.browser.sort((a, b) => a.name > b.name);
+data.engines = {};
+data.browser.sort((a, b) => a.renderingEngine === b.renderingEngine ? (a.name > b.name ? 1 : -1) : (a.renderingEngine > b.renderingEngine ? 1 : -1));
+data.browser.forEach(browser => data.engines[browser.renderingEngine] = (data.engines[browser.renderingEngine] || 0) + 1)
 data.api.forEach(api =>
   data.browser.forEach(browser =>
     data.status[api.tag][browser.tag] = data.status[api.tag][browser.tag] || {completeness: "no signal"}
