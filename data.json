@@ -101,7 +101,7 @@
       },
       "opera": {
         "completeness": "partially",
-        "since": "Canary",
+        "since": "Developer",
         "has_details": true
       },
       "firefox": {
