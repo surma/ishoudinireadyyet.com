@@ -101,7 +101,7 @@
       },
       "opera": {
         "completeness": "partially",
-        "since": "Canary",
+        "since": "Developer",
         "has_details": true
       },
       "firefox": {
@@ -146,17 +146,17 @@
     "propertiesandvalues": {
       "chrome": {
         "completeness": "yes",
-        "has_details": "true",
+        "has_details": true,
         "since": "Chrome 78"
       },
       "edge": {
         "completeness": "yes",
-        "has_details": "true",
+        "has_details": true,
         "since": "Edge 79"
       },
       "opera": {
         "completeness": "yes",
-        "has_details": "true",
+        "has_details": true,
         "since": "Opera 65"
       },
       "firefox": {
@@ -208,6 +208,10 @@
       "edge": {
         "completeness": "partially",
         "since": "Edge 79"
+      },
+      "samsung": {
+        "completeness": "partially",
+        "since": "Internet 10.2 Beta"
       },
       "opera": {
         "completeness": "partially",
