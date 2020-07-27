@@ -52,8 +52,9 @@
     {
       "tag": "parser",
       "name": "Parser API",
-      "explainer": "https://github.com/WICG/CSS-Parser-API/blob/master/README.md",
-      "status": "none"
+      "spec": "https://drafts.css-houdini.org/css-typed-om/",
+      "explainer": "https://drafts.css-houdini.org/css-parser-api/",
+      "status": "ed"
     },
     {
       "tag": "propertiesandvalues",
@@ -84,7 +85,7 @@
       "tag": "fontmetrics",
       "name": "Font Metrics API",
       "explainer": "https://github.com/w3c/css-houdini-drafts/blob/master/font-metrics-api/README.md",
-      "status": "none"
+      "status": "ed"
     }
   ],
   "status": {
