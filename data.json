@@ -83,9 +83,8 @@
     {
       "tag": "fontmetrics",
       "name": "Font Metrics API",
-      "spec": "https://drafts.css-houdini.org/font-metrics-api/",
       "explainer": "https://github.com/w3c/css-houdini-drafts/blob/master/font-metrics-api/README.md",
-      "status": "fpwd"
+      "status": "none"
     }
   ],
   "status": {
