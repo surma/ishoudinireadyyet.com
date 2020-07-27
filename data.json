@@ -168,6 +168,11 @@
         "completeness": "partially",
         "has_details": true,
         "since":  "Safari TP 67"
+      },
+      "samsung": {
+        "completeness": "yes",
+        "has_details": true,
+        "since": "Internet 12.0"
       }
     },
     "typedom": {
