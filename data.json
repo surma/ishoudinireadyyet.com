@@ -52,8 +52,8 @@
     {
       "tag": "parser",
       "name": "Parser API",
-      "spec": "https://drafts.css-houdini.org/css-typed-om/",
-      "explainer": "https://drafts.css-houdini.org/css-parser-api/",
+      "spec": "https://drafts.css-houdini.org/css-parser-api/",
+      "explainer": "https://github.com/WICG/CSS-Parser-API/blob/master/README.md",
       "status": "ed"
     },
     {
