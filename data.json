@@ -107,7 +107,7 @@
         "has_details": true
       },
       "firefox": {
-        "completeness": "intent",
+        "completeness": "consideration",
         "has_details": true
       }
     },
@@ -128,9 +128,8 @@
         "since": "Opera 52"
       },
       "firefox": {
-        "completeness": "intent",
-        "has_details": true,
-        "since": "Servo"
+        "completeness": "consideration",
+        "has_details": true
       },
       "safari": {
         "completeness": "development",
@@ -162,7 +161,7 @@
         "since": "Opera 65"
       },
       "firefox": {
-        "completeness": "development",
+        "completeness": "consideration",
         "has_details": true
       },
       "safari": {
@@ -188,7 +187,7 @@
         "since": "Edge 79"
       },
       "firefox": {
-        "completeness": "intent",
+        "completeness": "consideration",
         "has_details": true
       },
       "safari": {
