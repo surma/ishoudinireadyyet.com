@@ -146,7 +146,6 @@
       }
     },
     "parser": {
-      "completeness": "intent"
     },
     "propertiesandvalues": {
       "chrome": {
