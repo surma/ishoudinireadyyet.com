@@ -109,6 +109,10 @@
       "firefox": {
         "completeness": "consideration",
         "has_details": true
+      },
+      "safari": {
+        "completeness": "consideration",
+        "has_details": true
       }
     },
     "painting": {
@@ -214,6 +218,10 @@
       "edge": {
         "completeness": "partially",
         "since": "Edge 79"
+      },
+      "safari": {
+        "completeness": "consideration",
+        "has_details": true
       },
       "samsung": {
         "completeness": "partially",
