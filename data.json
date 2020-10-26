@@ -33,14 +33,6 @@
   ],
   "api": [
     {
-      "tag": "layout",
-      "name": "Layout API",
-      "spec": "https://drafts.css-houdini.org/css-layout-api/",
-      "demos": "https://github.com/GoogleChromeLabs/houdini-samples/tree/master/layout-worklet",
-      "explainer": "https://github.com/w3c/css-houdini-drafts/blob/master/css-layout-api/EXPLAINER.md",
-      "status": "fpwd"
-    },
-    {
       "tag": "painting",
       "name": "Paint API",
       "spec": "https://drafts.css-houdini.org/css-paint-api/",
@@ -50,19 +42,28 @@
       "status": "cr"
     },
     {
-      "tag": "parser",
-      "name": "Parser API",
-      "spec": "https://drafts.css-houdini.org/css-parser-api/",
-      "explainer": "https://github.com/WICG/CSS-Parser-API/blob/master/README.md",
-      "status": "ed"
-    },
-    {
       "tag": "propertiesandvalues",
       "name": "Properties & Values API",
       "spec": "https://drafts.css-houdini.org/css-properties-values-api/",
       "demos": "https://github.com/GoogleChromeLabs/houdini-samples/tree/master/properties-and-values/",
       "article": "https://web.dev/css-props-and-vals/",
       "status": "wd"
+    },
+    {
+      "tag": "typedom",
+      "name": "Typed OM",
+      "spec": "https://drafts.css-houdini.org/css-typed-om/",
+      "article": "https://developers.google.com/web/updates/2018/03/cssom",
+      "explainer": "https://github.com/w3c/css-houdini-drafts/blob/master/css-typed-om/README.md",
+      "status": "wd"
+    },
+    {
+      "tag": "layout",
+      "name": "Layout API",
+      "spec": "https://drafts.css-houdini.org/css-layout-api/",
+      "demos": "https://github.com/GoogleChromeLabs/houdini-samples/tree/master/layout-worklet",
+      "explainer": "https://github.com/w3c/css-houdini-drafts/blob/master/css-layout-api/EXPLAINER.md",
+      "status": "fpwd"
     },
     {
       "tag": "animation",
@@ -74,12 +75,11 @@
       "status": "fpwd"
     },
     {
-      "tag": "typedom",
-      "name": "Typed OM",
-      "spec": "https://drafts.css-houdini.org/css-typed-om/",
-      "article": "https://developers.google.com/web/updates/2018/03/cssom",
-      "explainer": "https://github.com/w3c/css-houdini-drafts/blob/master/css-typed-om/README.md",
-      "status": "wd"
+      "tag": "parser",
+      "name": "Parser API",
+      "spec": "https://drafts.css-houdini.org/css-parser-api/",
+      "explainer": "https://github.com/WICG/CSS-Parser-API/blob/master/README.md",
+      "status": "ed"
     },
     {
       "tag": "fontmetrics",
@@ -107,6 +107,10 @@
         "has_details": true
       },
       "firefox": {
+        "completeness": "consideration",
+        "has_details": true
+      },
+      "safari": {
         "completeness": "consideration",
         "has_details": true
       }
@@ -142,7 +146,6 @@
       }
     },
     "parser": {
-      "completeness": "intent"
     },
     "propertiesandvalues": {
       "chrome": {
@@ -215,9 +218,13 @@
         "completeness": "partially",
         "since": "Edge 79"
       },
+      "safari": {
+        "completeness": "consideration",
+        "has_details": true
+      },
       "samsung": {
         "completeness": "partially",
-        "since": "Internet 10.2 Beta"
+        "since": "Internet 10.2"
       },
       "opera": {
         "completeness": "partially",
