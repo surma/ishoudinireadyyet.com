@@ -196,7 +196,7 @@
       "safari": {
         "completeness": "yes",
         "has_details": true,
-        "since": "Safari TP 161"
+        "since": "Safari 16.4"
       },
       "samsung": {
         "completeness": "yes",
