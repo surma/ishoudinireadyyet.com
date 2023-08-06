@@ -1,4 +1,4 @@
-[Is Houdini Ready Yet?](https://ishoudinireadyyet.com)
+[Is Houdini Ready Yet‽](https://ishoudinireadyyet.com)
 
 ## Building
 
