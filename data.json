@@ -164,7 +164,7 @@
         "since": "Opera 65"
       },
       "firefox": {
-        "completeness": "shipped",
+        "completeness": "yes",
         "has_details": true,
         "since": "Firefox 128"
       },
